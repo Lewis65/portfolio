@@ -5,9 +5,9 @@ const SocialWrapper = styled.div`
   justify-content: space-around;
   display: flex;
   margin: 0 auto;
-  width: 50%;
+  width: 100%;
   @media screen and (min-width: 1024px) {
-    
+    width: 50%;
   }
 `
 const SocialLink = styled.a`
