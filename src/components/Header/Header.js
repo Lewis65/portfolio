@@ -1,16 +1,20 @@
-import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
+import Social from './Social'
+
 const HeaderWrapper = styled.header`
+  background-color: ${props => props.theme.colors.eggshell};
+  display: flex;
+  flex-direction: column;
   padding: 2rem;
   width: 100vw;
   @media screen and (min-width: 1024px) {
     height: 100vh;
     left: 0;
     position: fixed;
-    width: 400px;
+    width: ${props => props.theme.headerWidth};
   }
 `
 
@@ -19,6 +23,7 @@ const Header = ({ siteTitle }) => (
     <h1>
       {siteTitle}
     </h1>
+    <Social/>
   </HeaderWrapper>
 )
 
