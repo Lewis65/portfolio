@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
+import Button from '../shared/Button'
 import Social from './Social'
 
 const HeaderWrapper = styled.header`
@@ -18,21 +18,14 @@ const HeaderWrapper = styled.header`
   }
 `
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <HeaderWrapper>
     <h1>
-      {siteTitle}
+      Lewis Horwood
     </h1>
     <Social/>
+    <Button href="/contact">Contact me</Button>
   </HeaderWrapper>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: '',
-}
 
 export default Header
