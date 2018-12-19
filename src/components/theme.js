@@ -7,7 +7,7 @@ export default {
         rajah: "#F9AB55",
         white: "#F9F8F4"
     },
-    headerWidth: "400px",
+    headerWidth: "360px",
     padding: {
 
     }

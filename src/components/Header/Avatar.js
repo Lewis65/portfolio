@@ -11,14 +11,10 @@ const AvatarImg = styled.img`
   width: 200px;
 `
 
-const Avatar = () => {
-  if(AvatarSrc){
-    return (
-      <BlockWrapper>
-        <AvatarImg src={AvatarSrc}/>
-      </BlockWrapper>
-    )
-  }
-}
+const Avatar = () => (
+  <BlockWrapper>
+    <AvatarImg src={AvatarSrc}/>
+  </BlockWrapper>
+)
 
 export default Avatar

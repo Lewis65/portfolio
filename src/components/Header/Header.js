@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import Button from '../shared/Button'
 import Avatar from './Avatar'
+import Nav from './Nav'
 import Social from './Social'
 
 const HeaderWrapper = styled.header`
@@ -27,6 +28,7 @@ const Header = () => (
     <Avatar/>
     <Social/>
     <Button href="/contact">Contact me</Button>
+    <Nav/>
   </HeaderWrapper>
 )
 
