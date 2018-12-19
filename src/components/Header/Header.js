@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Button from '../shared/Button'
+import Avatar from './Avatar'
 import Social from './Social'
 
 const HeaderWrapper = styled.header`
@@ -23,6 +24,7 @@ const Header = () => (
     <h1>
       Lewis Horwood
     </h1>
+    <Avatar/>
     <Social/>
     <Button href="/contact">Contact me</Button>
   </HeaderWrapper>
