@@ -18,6 +18,7 @@ const Wrapper = styled.div`
   background-color: ${props => props.theme.colors.white};
   display: flex;
   flex-direction: column;
+  font-family: ${props => props.theme.fonts.body};
   min-height: 100vh;
 `
 
@@ -37,6 +38,7 @@ const Layout = ({ children }) => (
         <ThemeProvider theme={Theme}>
           <React.Fragment>
             <Helmet>
+              <link href="https://fonts.googleapis.com/css?family=Montserrat|Staatliches" rel="stylesheet"/>
               <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous" />
             </Helmet>
             <GlobalStyle></GlobalStyle>

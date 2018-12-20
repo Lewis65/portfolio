@@ -6,6 +6,15 @@ import Avatar from './Avatar'
 import Nav from './Nav'
 import Social from './Social'
 
+const HeaderTitle = styled.h1`
+  color: ${props => props.theme.colors.gunmetal};
+  font-family: ${props => props.theme.fonts.header};
+  font-size: 300%;
+  margin: 1rem 0;
+  padding: 0;
+  text-align: center;
+`
+
 const HeaderWrapper = styled.header`
   background-color: ${props => props.theme.colors.eggshell};
   display: flex;
@@ -22,9 +31,9 @@ const HeaderWrapper = styled.header`
 
 const Header = () => (
   <HeaderWrapper>
-    <h1>
+    <HeaderTitle>
       Lewis Horwood
-    </h1>
+    </HeaderTitle>
     <Avatar/>
     <Social/>
     <Button href="/contact">Contact me</Button>

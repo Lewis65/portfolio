@@ -7,8 +7,9 @@ export default {
         rajah: "#F9AB55",
         white: "#F9F8F4"
     },
-    headerWidth: "360px",
-    padding: {
-
-    }
+    fonts: {
+        body: "'Montserrat', 'montserrat', 'Source Sans', 'Helvetica Neue', Helvetica, 'Arial', sans-serif",
+        header: "'Staatliches', 'Arial Black', sans-serif"
+    },
+    headerWidth: "360px"
 }
