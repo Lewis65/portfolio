@@ -2,17 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 const SocialWrapper = styled.div`
-  justify-content: space-around;
+  justify-content: space-between;
   display: flex;
   margin: 0 auto;
   width: 100%;
-  @media screen and (min-width: 1024px) {
-    width: 50%;
-  }
 `
 const SocialLink = styled.a`
-  background-color: ${props => props.theme.colors.gunmetal};
-  color: ${props => props.theme.colors.white};
+  background-color: ${props => props.theme.colors.body};
+  color: ${props => props.theme.colors.bg1};
   border-radius: 50%;
   box-sizing: border-box;
   font-size: 24px;

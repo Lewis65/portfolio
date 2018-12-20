@@ -1,11 +1,11 @@
 export default {
     colors: {
-        eggshell: "#E3E7D3",
-        gunmetal: "#292F36",
-        tangerine: "#F58A07",
-        tangerineDark: "#B36506",
-        rajah: "#F9AB55",
-        white: "#F9F8F4"
+        bg1: "#F9F8F4",
+        bg2: "#E3E7D3",
+        body: "#292F36",
+        active: "#F58A07",
+        activeShade: "#B36506",
+        highlight: "#F9AB55"
     },
     fonts: {
         body: "'Montserrat', 'montserrat', 'Source Sans', 'Helvetica Neue', Helvetica, 'Arial', sans-serif",

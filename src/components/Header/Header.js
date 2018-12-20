@@ -7,10 +7,10 @@ import Nav from './Nav'
 import Social from './Social'
 
 const HeaderTitle = styled.h1`
-  color: ${props => props.theme.colors.gunmetal};
+  color: ${props => props.theme.colors.body};
   font-family: ${props => props.theme.fonts.header};
   font-size: 300%;
-  margin: 1rem 0 0 0;
+  margin: 0;
   padding: 0;
   text-align: center;
   @media screen and (min-width: 1024px) {
@@ -22,9 +22,9 @@ const HeaderBtnWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-right: 1rem;
+  margin: 1rem 0;
   @media screen and (min-width: 1024px) {
-    margin-right: 0;
+    margin: 1rem auto;
   }
 `
 
@@ -32,13 +32,17 @@ const HeaderMiddleWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin: 0 1rem;
+  @media screen and (max-width: 375px) {
+    margin: 0;
+  }
   @media screen and (min-width: 1024px) {
     flex-direction: column;
   }
 `
 
 const HeaderWrapper = styled.header`
-  background-color: ${props => props.theme.colors.eggshell};
+  background-color: ${props => props.theme.colors.bg2};
   display: flex;
   flex-direction: column;
   width: 100vw;
