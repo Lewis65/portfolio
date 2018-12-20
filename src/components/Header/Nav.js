@@ -12,7 +12,7 @@ const NavLink = styled(Link)`
   text-align: center;
   text-decoration: none;
   &:hover {
-      border-bottom: 4px solid ${props => props.theme.colors.activeDark}
+      border-bottom: 4px solid ${props => props.theme.colors.active}
   }
   @media screen and (min-width: 1024px) {
     margin: 0.5rem 0;
