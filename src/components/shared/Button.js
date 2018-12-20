@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
-const Button = styled.a`
+const Button = styled(Link)`
   background-color: ${props => props.theme.colors.tangerine};
   border-radius: 2px;
   box-shadow: 2px 2px ${props => props.theme.colors.tangerineDark};
