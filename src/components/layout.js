@@ -43,7 +43,7 @@ const Layout = ({ children }) => (
             </Helmet>
             <GlobalStyle></GlobalStyle>
             <Wrapper>
-              <Header siteTitle={data.site.siteMetadata.title} />
+              <Header/>
               {children}
             </Wrapper>
           </React.Fragment>

@@ -5,22 +5,35 @@ import { Link } from 'gatsby'
 const NavLink = styled(Link)`
   border-bottom: 4px solid ${props => props.active ? props.theme.colors.tangerine : props.theme.colors.rajah};
   color: ${props => props.theme.colors.gunmetal};
+  
+  flex-grow: 1;
   font-size: 120%;
   font-weight: 600;
-  margin: 0.5rem 0;
   padding: 0.25rem;
+  text-align: center;
   text-decoration: none;
   &:hover {
       border-bottom: 4px solid ${props => props.theme.colors.tangerine}
   }
+  @media screen and (min-width: 1024px) {
+    margin: 0.5rem 0;
+    text-align: left;
+  }
 `
 
 const NavWrapper = styled.nav`
-  bottom: 5rem;
+  background: ${props => props.theme.colors.white};
   display: flex;
-  flex-direction: column;
-  position: absolute;
+  position: relative;
   right: 0;
+  width: 100%;
+  @media screen and (min-width: 1024px) {
+    background: none;
+    bottom: 5rem;
+    flex-direction: column;
+    position: absolute;
+    width: auto;
+  }
 `
 
 const Nav = () => (

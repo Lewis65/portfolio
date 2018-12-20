@@ -11,5 +11,5 @@ export default {
         body: "'Montserrat', 'montserrat', 'Source Sans', 'Helvetica Neue', Helvetica, 'Arial', sans-serif",
         header: "'Staatliches', 'Arial Black', sans-serif"
     },
-    headerWidth: "360px"
+    headerWidth: "auto"
 }
