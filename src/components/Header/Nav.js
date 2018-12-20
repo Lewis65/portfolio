@@ -37,11 +37,11 @@ const NavWrapper = styled.nav`
 `
 
 const Nav = () => (
-  <NavWrapper>
-    <NavLink to='/'>about</NavLink>
-    <NavLink to='/portfolio'>portfolio</NavLink>
-    <NavLink to='/contact'>contact</NavLink>
-    <NavLink to='/blog'>blog</NavLink>
+  <NavWrapper id="nav">
+    <NavLink to='/#nav'>about</NavLink>
+    <NavLink to='/portfolio#nav'>portfolio</NavLink>
+    <NavLink to='/contact#nav'>contact</NavLink>
+    <NavLink to='/blog#nav'>blog</NavLink>
   </NavWrapper>
 )
 

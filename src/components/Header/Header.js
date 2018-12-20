@@ -64,7 +64,7 @@ const Header = () => (
       <Avatar/>
       <HeaderBtnWrapper>
         <Social/>
-        <Button href="/contact">Contact me</Button>
+        <Button to="/contact#main">Contact me</Button>
       </HeaderBtnWrapper>
     </HeaderMiddleWrapper>
     

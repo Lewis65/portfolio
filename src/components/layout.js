@@ -9,7 +9,7 @@ import Header from './Header/header'
 
 const GlobalStyle = createGlobalStyle`
   body {
-    color: ${props => props.theme.colors.gunmetal};
+    color: ${props => props.theme.colors.body};
     margin: 0;
   }
 `
@@ -44,7 +44,9 @@ const Layout = ({ children }) => (
             <GlobalStyle></GlobalStyle>
             <Wrapper>
               <Header/>
-              {children}
+              <main id="main">
+                {children}
+              </main>
             </Wrapper>
           </React.Fragment>
         </ThemeProvider>
