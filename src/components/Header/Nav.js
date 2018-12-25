@@ -6,7 +6,7 @@ const NavLink = styled(Link)`
   border-bottom: 4px solid ${props => props.active ? props.theme.colors.active : props.theme.colors.highlight};
   color: ${props => props.theme.colors.body};
   flex-grow: 1;
-  font-size: 120%;
+  font-size: 100%;
   font-weight: 600;
   padding: 0.25rem;
   text-align: center;
@@ -15,6 +15,7 @@ const NavLink = styled(Link)`
       border-bottom: 4px solid ${props => props.theme.colors.active}
   }
   @media screen and (min-width: 1024px) {
+    font-size: 120%;
     margin: 0.5rem 0;
     text-align: left;
   }
