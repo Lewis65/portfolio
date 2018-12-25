@@ -9,6 +9,7 @@ import Header from './Header/header'
 
 const GlobalStyle = createGlobalStyle`
   body {
+    box-sizing: border-box;
     color: ${props => props.theme.colors.body};
     margin: 0;
   }
