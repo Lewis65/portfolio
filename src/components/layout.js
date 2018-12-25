@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Wrapper = styled.div`
-  background-color: ${props => props.theme.colors.white};
+  background-color: ${props => props.theme.colors.bg1};
   display: flex;
   flex-direction: column;
   font-family: ${props => props.theme.fonts.body};
