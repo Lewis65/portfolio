@@ -14,6 +14,14 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+const Main = styled.div`
+  width: 100%;
+  @media screen and (min-width: 1024px) {
+    margin-left: ${props => props.theme.headerWidth};
+    width: calc(100% - ${props => props.theme.headerWidth});
+  }
+`
+
 const Wrapper = styled.div`
   background-color: ${props => props.theme.colors.bg1};
   display: flex;
@@ -44,9 +52,9 @@ const Layout = ({ children }) => (
             <GlobalStyle></GlobalStyle>
             <Wrapper>
               <Header/>
-              <main id="main">
+              <Main id="main">
                 {children}
-              </main>
+              </Main>
             </Wrapper>
           </React.Fragment>
         </ThemeProvider>

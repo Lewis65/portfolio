@@ -43,9 +43,11 @@ const HeaderMiddleWrapper = styled.div`
 
 const HeaderWrapper = styled.header`
   background-color: ${props => props.theme.colors.bg2};
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   width: 100vw;
+  z-index: 100;
   @media screen and (min-width: 1024px) {
     height: 100vh;
     left: 0;
