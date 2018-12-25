@@ -20,7 +20,6 @@ background-attachment: fixed;
   z-index: 0;
   @media screen and (min-width: 1024px) {
     left: ${props => props.theme.headerWidth};
-    max-width: calc(100vw - ${props => props.theme.headerWidth});
     width: calc(100vw - ${props => props.theme.headerWidth});
   }
 `
@@ -37,7 +36,6 @@ const HeroShade = styled.div`
   z-index: 1;
   @media screen and (min-width: 1024px) {
     left: ${props => props.theme.headerWidth};
-    max-width: calc(100vw - ${props => props.theme.headerWidth});
     width: calc(100vw - ${props => props.theme.headerWidth});
   }
 `
