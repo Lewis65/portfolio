@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Lewis Horwood',
-    description: 'I am a Javascript developer focused on making cool and useful things that make life better. The MERN stack (Mongo, Express, React, Node) is my weapon of choice.',
+    description: 'I am a Javascript developer focused on creating useful and cool innovations in technology that make life better. The MERN stack (Mongo, Express, React, Node) is my weapon of choice.',
     author: 'Lewis',
   },
   plugins: [
