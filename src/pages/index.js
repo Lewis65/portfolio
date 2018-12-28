@@ -4,28 +4,8 @@ import styled from 'styled-components'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Heading from '../components/shared/Heading'
+import Main from '../components/shared/Main'
 import HeroImgSrc from '../images/hero1.jpg'
-
-const Content = styled.div`
-  align-content: flex-start;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 2rem;
-  position: absolute;
-  z-index: 10;
-  @media screen and (min-width: 1024px) {
-    margin-top: 8rem;
-  }
-  p {
-    color: ${props => props.theme.colors.bg1};
-    line-height: 150%;
-    @media screen and (min-width: 1024px) {
-      font-size: 130%;
-    }
-  }
-  
-`
 
 const Hero = styled.div`
   background-attachment: fixed;
@@ -66,12 +46,12 @@ const HeroShade = styled.div`
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={['Lewis Horwood', 'web developer', 'react', 'Seoul', 'Calgary', 'javascript developer', 'programmer', 'software engineer', 'frontend']} />
-    <Content>
+    <Main>
       <Heading>Hi. I'm Lewis.</Heading>
       <p>
         I'm a full-stack web developer based in Seoul, South Korea. I like making handy things on the internet.
       </p>
-    </Content>
+    </Main>
     <HeroShade>
     </HeroShade>
     <Hero />
