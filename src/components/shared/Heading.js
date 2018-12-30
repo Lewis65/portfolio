@@ -1,16 +1,16 @@
 import styled from 'styled-components'
 
 const Heading = styled.h1`
-  background-color: ${props => props.backgroundColor || props.theme.colors.bg1};
-  box-shadow: 5px 5px ${props => props.theme.colors.active};
-  color: ${props => props.color || props.theme.colors.active};
+  background-color: #FFF;
+  box-shadow: 5px 5px ${props => props.active ? props.theme.colors.activeShade : props.theme.colors.highlight};
+  color: ${props => props.active ? props.theme.colors.active : props.theme.colors.highlight};
   display: inline-block;
   font-family: ${props => props.theme.fonts.header};
   font-size: 48px;
   margin: 0 auto 0 0;
-  padding: 0.5rem;
+  padding: 1rem;
   @media screen and (min-width: 1024px) {
-    box-shadow: 8px 8px ${props => props.theme.colors.active};
+    box-shadow: 8px 8px ${props => props.active ? props.theme.colors.activeShade : props.theme.colors.highlight};
     font-size: 500%;
   }
 `
