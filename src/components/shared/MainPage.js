@@ -2,14 +2,16 @@ import styled from 'styled-components'
 
 const Main = styled.div`
   align-content: flex-start;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem;
-  position: absolute;
-  z-index: 10;
+  padding: 1rem;
+  width: 100%;
   @media screen and (min-width: 1024px) {
-    margin-top: 4rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    width: calc(100%-(4rem+${props => props.theme.headerWidth}));
   }
   p {
     line-height: 125%;
