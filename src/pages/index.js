@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Heading from '../components/shared/Heading'
-import Main from '../components/shared/Main'
+import Main from '../components/About/Main'
 import HeroImgSrc from '../images/hero1.jpg'
 
 const Hero = styled.div`
