@@ -46,15 +46,33 @@ const ProjectWrapper = styled(BlockWrapper)`
   }
 `
 
-const Projects = () => {
-  const items = projectData.map(project => 
-    <ProjectCard project={project}/>
-  )
-  return (
-    <ProjectWrapper>
-      {items}
-    </ProjectWrapper>
-  )
+class Projects extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      displayProject: null
+    }
+  }
+
+  handleCardClick = (index) => {
+    this.setState({displayProject: projectData[index]})
+  }
+
+  handleProjectClose = () => {
+    this.setState({displayProject: null})
+  }
+  
+  render() {
+    const items = projectData.map((project, index) => 
+      <ProjectCard project={project} key={index} projectId={index.toString()} handleCardClick={this.handleCardClick}/>
+    )
+    return (
+      <ProjectWrapper>
+        {items}
+      </ProjectWrapper>
+    )
+  }
 }
 
 export default Projects
