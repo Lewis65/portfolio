@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Tags from '../Portfolio/Tags'
+
 const Card = styled.div`
   background-color: white;
   border: 2px solid ${props => props.theme.colors.highlight};
@@ -42,6 +44,7 @@ const ProjectCard = (props) => {
       <ProjectTitle >
         {props.project.title}
       </ProjectTitle>
+      <Tags tags={props.project.tags}></Tags>
     </Card>
   )
 }

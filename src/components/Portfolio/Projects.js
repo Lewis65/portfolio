@@ -14,7 +14,7 @@ const projectData = [
       code: "https://github.com",
       demo: "https://codepen.com"
     },
-    tags: ["react", "javascript", "front-end"]
+    tags: ["react", "javascript", "frontend"]
   },
   {
     title: "My project 2",
@@ -24,7 +24,7 @@ const projectData = [
       code: "https://github.com",
       demo: "https://codepen.com"
     },
-    tags: ["react", "javascript", "front-end"]
+    tags: ["react", "javascript", "frontend"]
   },
   {
     title: "My project 1",
@@ -34,7 +34,7 @@ const projectData = [
       code: "https://github.com",
       demo: "https://codepen.com"
     },
-    tags: ["react", "javascript", "front-end"]
+    tags: ["react", "javascript", "frontend", "backend", "redux", "gatsby", "typescript", "reallylongtagthatmightbreaksomething"]
   }
 ]
 
