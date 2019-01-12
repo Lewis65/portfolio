@@ -6,8 +6,9 @@ import Tag from '../Portfolio/Tag'
 const TagContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin: 0.5rem;
   padding: 4px 4px 0 4px;
-  width: 100%;
+  width: auto;
 `
 
 const Tags = (props) => {

@@ -12,7 +12,7 @@ const TagLink = styled.a`
   height: 16px;
   margin-bottom: 4px;
   margin-right: 6px;
-  padding: 0 6px;
+  padding: 2px 8px;
   &:hover {
     background-color: ${props => props.theme.colors.active};
   }

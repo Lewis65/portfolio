@@ -14,7 +14,8 @@ const projectData = [
       code: "https://github.com",
       demo: "https://codepen.com"
     },
-    tags: ["react", "javascript", "frontend"]
+    tags: ["react", "javascript", "frontend"],
+    img: "https://nwanesthesia.com/wp-content/uploads/2014/01/mk_1.jpg"
   },
   {
     title: "My project 2",
@@ -24,7 +25,8 @@ const projectData = [
       code: "https://github.com",
       demo: "https://codepen.com"
     },
-    tags: ["react", "javascript", "frontend"]
+    tags: ["react", "javascript", "frontend"],
+    img: "https://nwanesthesia.com/wp-content/uploads/2014/01/mk_1.jpg"
   },
   {
     title: "My project 1",
