@@ -46,15 +46,12 @@ const ProjectTitle = styled.h3`
 const Thumbnail = styled.div`
   background: linear-gradient(to bottom, white, cyan) center / cover;
   background-image: url(${props => props.src});
-  max-height: 200px;
+  max-height: 300px;
   min-height: 200px;
   width: 100%;
-  @media screen and (min-width: 1024px) {
-    max-height: 200px;
-  }
 `
 
-//Add clickable tags, thumbnails, then work on project detail modal
+//Add clickable tags, then work on project detail modal
 
 const ProjectCard = (props) => {
 

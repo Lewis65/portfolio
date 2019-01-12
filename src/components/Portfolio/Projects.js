@@ -2,7 +2,8 @@ import styled from 'styled-components'
 import React from 'react'
 
 import BlockWrapper from '../shared/BlockWrapper'
-import ProjectCard from './ProjectCard';
+import ProjectCard from './ProjectCard'
+import Tags from './Tags'
 
 //dummy data
 const projectData = [
@@ -53,7 +54,8 @@ class Projects extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      displayProject: null
+      displayProject: null,
+      filterByTag: null
     }
   }
 
@@ -64,15 +66,38 @@ class Projects extends React.Component {
   handleProjectClose = () => {
     this.setState({displayProject: null})
   }
+
+  handleTagClick = (tag) => {
+    this.setState({filterByTag: tag})
+  }
   
   render() {
-    const items = projectData.map((project, index) => 
-      <ProjectCard project={project} key={index} projectId={index.toString()} handleCardClick={this.handleCardClick}/>
+
+    let items = projectData.map((project, index) => {
+        if (this.state.filterByTag === null || project.tags.includes(this.state.filterByTag)){
+          return(
+           <ProjectCard project={project} key={index} projectId={index.toString()} handleCardClick={this.handleCardClick}/>
+          )
+        }
+      }
     )
+
+    if(items.length === 0){
+      items = <p>Nothing here :(</p>
+    }
+    const dupedTags = projectData.map(project => project.tags).flat().sort()
+    console.log(dupedTags)
+    const allTags = Array.from(new Set(dupedTags))
+    //console.log(allTags)
+
     return (
-      <ProjectWrapper>
-        {items}
-      </ProjectWrapper>
+      <React.Fragment>
+        <Tags tags={allTags}/>
+        <ProjectWrapper>
+          {items}
+        </ProjectWrapper>
+      </React.Fragment>
+      
     )
   }
 }
