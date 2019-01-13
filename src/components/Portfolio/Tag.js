@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import React from 'react'
 
 const TagLink = styled.a`
-  background-color: ${props => props.theme.colors.activeShade};
+  background-color: ${props => props.activeFilter=="true" ? "#CCC" : props.theme.colors.active};
   border-radius: 12px;
   color: white;
   cursor: pointer;
@@ -23,7 +23,7 @@ const TagLink = styled.a`
 
 const Tag = (props) => {
   return(
-    <TagLink tag={props.tag}>
+    <TagLink tag={props.tag} onClick={()=>props.handleTagClick(props.tag)} activeLink={props.activeLink}>
       {props.tag}
     </TagLink>
   )

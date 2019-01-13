@@ -12,9 +12,17 @@ const TagContainer = styled.div`
 `
 
 const Tags = (props) => {
-  const tags = props.tags.map(item => 
-    <Tag tag={item}>{item}</Tag>
+  let tags = props.tags.map(item => 
+    {
+      if (item !== props.filterByTag){
+        return (<Tag tag={item} handleTagClick={props.handleTagClick}/>)
+      }
+    }
   )
+  if(props.filterByTag && props.filterByTag !== null){
+    tags.unshift(<Tag tag={props.filterByTag + " X"} handleTagClick={() => props.handleTagClick(null)} activeFilter="true"/>)
+  }
+
   return(
     <TagContainer>
       {tags}

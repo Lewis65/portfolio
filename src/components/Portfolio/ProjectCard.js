@@ -12,9 +12,10 @@ const Card = styled.div`
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  flex-grow: 0;
   font-size: 75%;
   overflow-x: hidden;
-  width: 90%;
+  width: 40%;
   margin: 1rem;
   padding: 0;
   user-select: none;
@@ -61,7 +62,7 @@ const ProjectCard = (props) => {
         {props.project.title}
       </ProjectTitle>
       <Thumbnail src={props.project.img}>
-        <Tags tags={props.project.tags}></Tags>
+        <Tags tags={props.project.tags} handleTagClick={props.handleTagClick}></Tags>
       </Thumbnail>
       <ProjectDescription>
         {props.project.description}

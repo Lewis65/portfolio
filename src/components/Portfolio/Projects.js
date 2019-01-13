@@ -76,7 +76,7 @@ class Projects extends React.Component {
     let items = projectData.map((project, index) => {
         if (this.state.filterByTag === null || project.tags.includes(this.state.filterByTag)){
           return(
-           <ProjectCard project={project} key={index} projectId={index.toString()} handleCardClick={this.handleCardClick}/>
+           <ProjectCard project={project} key={index} projectId={index.toString()} handleCardClick={this.handleCardClick} handleTagClick={this.handleTagClick}/>
           )
         }
       }
@@ -86,18 +86,15 @@ class Projects extends React.Component {
       items = <p>Nothing here :(</p>
     }
     const dupedTags = projectData.map(project => project.tags).flat().sort()
-    console.log(dupedTags)
     const allTags = Array.from(new Set(dupedTags))
-    //console.log(allTags)
 
     return (
       <React.Fragment>
-        <Tags tags={allTags}/>
+        <Tags tags={allTags} handleTagClick={this.handleTagClick} filterByTag={this.state.filterByTag}/>
         <ProjectWrapper>
           {items}
         </ProjectWrapper>
       </React.Fragment>
-      
     )
   }
 }
