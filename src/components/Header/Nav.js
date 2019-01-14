@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 const NavLink = styled(Link)`
-  border-bottom: 4px solid ${props => props.active ? props.theme.colors.active : props.theme.colors.highlight};
+  border-bottom: 4px solid ${props => props.theme.colors.body};
   color: ${props => props.theme.colors.body};
   flex-grow: 1;
   font-size: 100%;

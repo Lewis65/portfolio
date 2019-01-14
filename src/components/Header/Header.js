@@ -13,6 +13,7 @@ const HeaderTitle = styled.h1`
   margin: 0;
   padding: 0;
   text-align: center;
+  text-shadow: 2px 2px ${props => props.theme.colors.shadow};
   @media screen and (min-width: 1024px) {
     margin-bottom: 1rem;
   }

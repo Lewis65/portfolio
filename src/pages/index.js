@@ -47,7 +47,7 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={['Lewis Horwood', 'web developer', 'react', 'Seoul', 'Calgary', 'javascript developer', 'programmer', 'software engineer', 'frontend']} />
     <Main>
-      <Heading active>Hi. I'm Lewis.</Heading>
+      <Heading hero>Hi. I'm Lewis.</Heading>
       <p>
         I'm a full-stack web developer based in Seoul, South Korea. I like making handy things on the internet.
       </p>

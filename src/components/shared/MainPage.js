@@ -6,11 +6,11 @@ const Main = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 1rem;
+  padding: 2rem;
   width: 100%;
   @media screen and (min-width: 1024px) {
     margin-top: 2rem;
-    padding: 2rem;
+    padding: 5rem;
     width: calc(100%-(4rem+${props => props.theme.headerWidth}));
   }
   p {

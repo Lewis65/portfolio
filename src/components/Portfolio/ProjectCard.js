@@ -5,9 +5,8 @@ import Tags from '../Portfolio/Tags'
 
 const Card = styled.div`
   background-color: white;
-  border: 0 solid ${props => props.theme.colors.highlight};
-  border-radius: 1rem;
-  box-shadow: 5px 5px ${props => props.theme.colors.bg2};
+  border-radius: 2rem;
+  box-shadow: ${props => props.theme.shadow};
   box-sizing: border-box;
   cursor: pointer;
   display: flex;
@@ -15,7 +14,6 @@ const Card = styled.div`
   flex-direction: column;
   font-size: 75%;
   overflow-x: hidden;
-  margin: 1rem;
   max-width: 500px;
   min-width: 300px;
   padding: 0;
@@ -24,7 +22,6 @@ const Card = styled.div`
   -moz-user-select: none;
   -webkit-user-select: none;
   @media screen and (min-width: 1024px) {
-    flex: 1 1 350px;
     font-size: 90%;
     margin: 2rem;
     width: 33%;

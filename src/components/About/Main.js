@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 const Main = styled.main`
   align-content: flex-start;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,10 +10,11 @@ const Main = styled.main`
   position: absolute;
   z-index: 10;
   @media screen and (min-width: 1024px) {
-    margin-top: 8rem;
+    height: 100vh;
+    padding: 5rem;
   }
   p {
-    color: ${props => props.theme.colors.bg1};
+    color: white;
     line-height: 150%;
     @media screen and (min-width: 1024px) {
       font-size: 130%;
