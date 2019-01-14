@@ -11,12 +11,13 @@ const Card = styled.div`
   box-sizing: border-box;
   cursor: pointer;
   display: flex;
+  flex: 1 1;
   flex-direction: column;
-  flex-grow: 0;
   font-size: 75%;
   overflow-x: hidden;
-  width: 40%;
   margin: 1rem;
+  max-width: 500px;
+  min-width: 300px;
   padding: 0;
   user-select: none;
   -ms-user-select: none;

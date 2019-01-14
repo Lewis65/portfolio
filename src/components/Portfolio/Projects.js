@@ -44,8 +44,10 @@ const projectData = [
 const ProjectWrapper = styled(BlockWrapper)`
   align-items: center;
   flex-direction: column;
+  width: 100%;
   @media screen and (min-width: 1024px) {
     flex-direction: row;
+    flex-wrap: wrap;
   }
 `
 
