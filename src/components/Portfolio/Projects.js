@@ -41,29 +41,6 @@ const projectData = [
   }
 ]
 
-const FilterTags = styled(Tags)`
-  .filterTag {
-    @media screen and (min-width: 1024px) {
-      margin-top: 1rem;
-      &:hover {
-        animation: "perkup" 0.2s forwards ease-out;
-        color: white;
-      }
-      @keyframes perkup {
-        0% {
-          margin-top: 1rem;
-        }
-        100% {
-          margin-top: 0.75rem;
-        }
-      }
-    }
-  }
-  #activeFilterTag {
-    background-color: ${props => props.theme.colors.activeShade};
-  }
-`
-
 const ProjectWrapper = styled(BlockWrapper)`
   align-items: center;
   flex-direction: column;
@@ -116,7 +93,7 @@ class Projects extends React.Component {
 
     return (
       <React.Fragment>
-        <FilterTags tags={allTags} handleTagClick={this.handleTagClick} filterByTag={this.state.filterByTag}/>
+        <Tags tags={allTags} handleTagClick={this.handleTagClick} filterByTag={this.state.filterByTag}/>
         <ProjectWrapper>
           {items}
         </ProjectWrapper>
