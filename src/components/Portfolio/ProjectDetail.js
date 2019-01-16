@@ -21,7 +21,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0;
-  padding: 1rem;
   width: 100%;
   @media screen and (min-width: 1024px) {
     flex-direction: row;
@@ -60,11 +59,15 @@ const ProjectDescription = styled.div`
 const ProjectDetails = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
+  padding: 1rem;
+  @media screen and (min-width: 1024px) {
+    width: 50%;
+  }
 `
 
 const ProjectTitle = styled.h3`
   background-color: ${props => props.theme.colors.highlight};
+  box-sizing: border-box;
   color: white;
   display: block;
   font-size: 150%;
@@ -72,10 +75,11 @@ const ProjectTitle = styled.h3`
   padding: 1rem;
 `
 
-const Thumbnail = styled.div`
-  flex: 0 0;
-  height: auto;
+const Thumbnail = styled.img`
+  object-fit: cover;
   width: 100%;
+  height: auto;
+  max-height: 100%;
   @media screen and (min-width: 1024px) {
     width: 50%;
   }
@@ -94,9 +98,7 @@ const ProjectDetail = (props) => {
       </ProjectTitle>
 
       <Wrapper>
-        <Thumbnail>
-          <img src={props.project.img}/>
-        </Thumbnail>
+        <Thumbnail src={props.project.img}/>
         <ProjectDetails>
           <ProjectBrief>
             {props.project.brief}

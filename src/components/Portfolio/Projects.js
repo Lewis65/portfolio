@@ -100,7 +100,7 @@ class Projects extends React.Component {
 
     let children;
     if(this.state.displayProject !== null){
-      children = <ProjectDetail project={this.state.displayProject}/>
+      children = <ProjectDetail project={this.state.displayProject} handleProjectClose={this.handleProjectClose} handleTagClick={this.handleTagClick}/>
     } else {
       children = (
         <React.Fragment>
