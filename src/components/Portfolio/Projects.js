@@ -3,6 +3,7 @@ import React from 'react'
 
 import BlockWrapper from '../shared/BlockWrapper'
 import ProjectCard from './ProjectCard'
+import ProjectDetail from './ProjectDetail'
 import Tags from './Tags'
 
 //dummy data
@@ -72,11 +73,12 @@ class Projects extends React.Component {
   }
 
   handleProjectClose = () => {
+    console.log("goose")
     this.setState({displayProject: null})
   }
 
   handleTagClick = (tag) => {
-    this.setState({filterByTag: tag})
+    this.setState({displayProject: null, filterByTag: tag})
   }
   
   render() {
@@ -84,7 +86,7 @@ class Projects extends React.Component {
     let items = projectData.map((project, index) => {
         if (this.state.filterByTag === null || project.tags.includes(this.state.filterByTag)){
           return(
-           <ProjectCard project={project} key={index} projectId={index.toString()} handleCardClick={this.handleCardClick} handleTagClick={this.handleTagClick}/>
+           <ProjectCard project={project} key={index} projectId={index.toString()} handleCardClick={this.handleCardClick} handleTagClick={this.handleTagClick} handleProjectClose={this.handleProjectClose}/>
           )
         }
       }
@@ -96,12 +98,21 @@ class Projects extends React.Component {
     const dupedTags = projectData.map(project => project.tags).flat().sort()
     const allTags = Array.from(new Set(dupedTags))
 
+    let children;
+    if(this.state.displayProject !== null){
+      children = <ProjectDetail project={this.state.displayProject}/>
+    } else {
+      children = (
+        <React.Fragment>
+          <Tags tags={allTags} handleTagClick={this.handleTagClick} filterByTag={this.state.filterByTag} filters="true"/>
+          <ProjectWrapper>{items}</ProjectWrapper>
+        </React.Fragment>
+      )
+    }
+
     return (
       <React.Fragment>
-        <Tags tags={allTags} handleTagClick={this.handleTagClick} filterByTag={this.state.filterByTag} filters="true"/>
-        <ProjectWrapper>
-          {items}
-        </ProjectWrapper>
+        {children}
       </React.Fragment>
     )
   }

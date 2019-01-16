@@ -30,7 +30,6 @@ const Card = styled.div`
 `
 
 const ProjectBrief = styled.div`
-  border-top: 0 solid ${props => props.theme.colors.highlight};
   flex-grow: 1;
   padding: 1rem;
 `
