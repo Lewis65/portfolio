@@ -10,6 +10,7 @@ const projectData = [
   {
     title: "My project 3",
     date: "December 2018",
+    brief: "Here's the third project I ever made.",
     description: "Here's a project I made up just now so that I have some dummy data to make the site with.",
     links: {
       code: "https://github.com",
@@ -21,6 +22,7 @@ const projectData = [
   {
     title: "My project 2",
     date: "November 2018",
+    brief: "Here's the second project I ever made. I used a lot of neato thingies. Unfortunately the brief is longer than usual and might mess up some spacing and alignment. Oh no.",
     description: "Here's a project I made up just now so that I have some dummy data to make the site with.",
     links: {
       code: "https://github.com",
@@ -32,6 +34,7 @@ const projectData = [
   {
     title: "My project 1",
     date: "October 2018",
+    brief: "Here's the first project I ever made. It almost works!",
     description: "Here's a project I made up just now so that I have some dummy data to make the site with.",
     links: {
       code: "https://github.com",
@@ -46,9 +49,11 @@ const ProjectWrapper = styled(BlockWrapper)`
   flex-direction: column;
   width: 100%;
   @media screen and (min-width: 1024px) {
+    align-items: stretch;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: 1rem;
   }
 `
 
@@ -93,7 +98,7 @@ class Projects extends React.Component {
 
     return (
       <React.Fragment>
-        <Tags tags={allTags} handleTagClick={this.handleTagClick} filterByTag={this.state.filterByTag}/>
+        <Tags tags={allTags} handleTagClick={this.handleTagClick} filterByTag={this.state.filterByTag} filters="true"/>
         <ProjectWrapper>
           {items}
         </ProjectWrapper>

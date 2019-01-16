@@ -6,7 +6,7 @@ import Tag from '../Portfolio/Tag'
 const TagContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 0.5rem;
+  margin: ${props => props.filters==="true" ? "0" : "0.5rem"};
   padding: 4px 4px 0 4px;
   width: auto;
 `
@@ -15,16 +15,16 @@ const Tags = (props) => {
   let tags = props.tags.map(item => 
     {
       if (item !== props.filterByTag){
-        return (<Tag tag={item} handleTagClick={props.handleTagClick}/>)
+        return (<Tag tag={item} handleTagClick={props.handleTagClick} filters={props.filters}/>)
       }
     }
   )
   if(props.filterByTag && props.filterByTag !== null){
-    tags.unshift(<Tag tag={props.filterByTag + " X"} handleTagClick={() => props.handleTagClick(null)} activeFilter="true"/>)
+    tags.unshift(<Tag tag={props.filterByTag + " X"} handleTagClick={() => props.handleTagClick(null)} activeFilter="true" filters={props.filters}/>)
   }
 
   return(
-    <TagContainer>
+    <TagContainer filters={props.filters}>
       {tags}
     </TagContainer>
   )

@@ -14,22 +14,24 @@ const Card = styled.div`
   flex-direction: column;
   font-size: 75%;
   overflow-x: hidden;
-  max-width: 500px;
+  margin-bottom: 2rem;
   min-width: 300px;
   padding: 0;
   user-select: none;
+  width: 100%;
   -ms-user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
   @media screen and (min-width: 1024px) {
     font-size: 90%;
-    margin: 2rem;
-    width: 33%;
+    justify-content: space-between;
+    max-width: 30%;
   }
 `
 
-const ProjectDescription = styled.div`
+const ProjectBrief = styled.div`
   border-top: 0 solid ${props => props.theme.colors.highlight};
+  flex-grow: 1;
   padding: 1rem;
 `
 
@@ -55,16 +57,16 @@ const Thumbnail = styled.div`
 const ProjectCard = (props) => {
 
   return(
-    <Card onClick={()=>props.handleCardClick(props.projectId)}>
-      <ProjectTitle >
+    <Card>
+      <ProjectTitle onClick={()=>props.handleCardClick(props.projectId)}>
         {props.project.title}
       </ProjectTitle>
-      <Thumbnail src={props.project.img}>
+      <Thumbnail src={props.project.img} onClick={()=>props.handleCardClick(props.projectId)}>
         <Tags tags={props.project.tags} handleTagClick={props.handleTagClick}></Tags>
       </Thumbnail>
-      <ProjectDescription>
-        {props.project.description}
-      </ProjectDescription>
+      <ProjectBrief>
+        {props.project.brief}
+      </ProjectBrief>
     </Card>
   )
 }
