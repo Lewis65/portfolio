@@ -80,6 +80,7 @@ const Thumbnail = styled.img`
   height: 100%;
   margin: 0;
   @media screen and (min-width: 1024px) {
+    min-height: 400px;
     width: 50%;
   }
 `
