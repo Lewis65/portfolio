@@ -10,11 +10,11 @@ const Close = styled.div`
   cursor: pointer;
   display: inline-flex;
   float: right;
-  height: 32px;
+  height: 24px;
   justify-content: center;
   overflow-x: hidden;
   overflow-y: hidden;
-  width: 32px;
+  width: 24px;
 `
 
 const Wrapper = styled.div`
@@ -37,14 +37,13 @@ const Project = styled.div`
   flex-direction: column;
   font-size: 90%;
   overflow-x: hidden;
-  margin-bottom: 2rem;
   user-select: none;
   width: 100%;
   -ms-user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
   @media screen and (min-width: 1024px) {
-    font-size: 110%;
+    font-size: 100%;
   }
 `
 
@@ -70,7 +69,7 @@ const ProjectTitle = styled.h3`
   box-sizing: border-box;
   color: white;
   display: block;
-  font-size: 150%;
+  font-size: 125%;
   margin: 0;
   padding: 1rem;
 `
@@ -78,8 +77,8 @@ const ProjectTitle = styled.h3`
 const Thumbnail = styled.img`
   object-fit: cover;
   width: 100%;
-  height: auto;
-  max-height: 100%;
+  height: 100%;
+  margin: 0;
   @media screen and (min-width: 1024px) {
     width: 50%;
   }

@@ -10,11 +10,11 @@ const Card = styled.div`
   box-sizing: border-box;
   cursor: pointer;
   display: flex;
-  flex: 1 1;
+  flex: 1;
   flex-direction: column;
   font-size: 75%;
   overflow-x: hidden;
-  margin-bottom: 2rem;
+  margin: 0 1rem 1rem 0;
   min-width: 300px;
   padding: 0;
   user-select: none;
@@ -25,7 +25,7 @@ const Card = styled.div`
   @media screen and (min-width: 1024px) {
     font-size: 90%;
     justify-content: space-between;
-    max-width: 30%;
+    margin: 0 2rem 2rem 0;
   }
 `
 
