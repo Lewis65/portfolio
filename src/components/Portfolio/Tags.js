@@ -6,8 +6,8 @@ import Tag from '../Portfolio/Tag'
 const TagContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: ${props => props.filters==="true" ? "0" : "0.5rem"};
-  padding: 4px 4px 0 4px;
+  margin: ${props => props.filters==="true" || props.noMargin ? "0" : "0.5rem"};
+  padding: ${props => props.padding ? props.padding : "4px 4px 0 4px"};
   width: auto;
 `
 
@@ -24,7 +24,7 @@ const Tags = (props) => {
   }
 
   return(
-    <TagContainer filters={props.filters}>
+    <TagContainer filters={props.filters} padding={props.padding} noMargin={props.noMargin}>
       {tags}
     </TagContainer>
   )
