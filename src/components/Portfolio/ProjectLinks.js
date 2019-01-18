@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'gatsby';
+import Link from '../shared/Link'
 
 //classNames for relevant fontAwesome icons
 const icons = {
