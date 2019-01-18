@@ -13,10 +13,23 @@ const projectData = [
     date: "December 2018",
     brief: "Here's the third project I ever made.",
     description: "Here's a project I made up just now so that I have some dummy data to make the site with. Interestlingly, this project is best described by a lengthy Lorem Ipsum passage. Allow me to begin: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel lorem sit amet nisi condimentum cursus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec cursus neque venenatis pellentesque congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras rutrum eros eu leo varius placerat. Vestibulum ac lacus nisl. Aliquam sit amet erat tincidunt, semper mi dignissim, laoreet lorem. Phasellus mattis leo in feugiat eleifend. Quisque scelerisque bibendum mi at egestas. Maecenas facilisis nisl pretium, sagittis leo vitae, feugiat tellus. Cras nisi urna, blandit eu congue sed, gravida ornare massa. Vivamus venenatis ut nunc ut malesuada. Proin tincidunt elementum sapien, in ornare ante commodo non. Nam eget quam a ipsum semper blandit eget nec leo. Nulla in tempus massa. Vivamus ut consectetur enim, laoreet faucibus ipsum. Nullam non justo nec elit aliquam viverra at id augue. Sed volutpat laoreet magna, nec mollis sem. Nunc vel tortor massa. Phasellus non dolor erat. Nulla a massa enim. Nullam bibendum sollicitudin elit eget rutrum. Pellentesque consectetur, turpis vel euismod porta, augue libero pulvinar ex, sit amet tempus massa enim dapibus quam. Vestibulum nec tortor quis libero ultricies efficitur a at est. Aenean sit amet cursus felis.",
-    links: {
-      code: "https://github.com",
-      demo: "https://codepen.com"
-    },
+    links: [
+      {
+        type: "github",
+        text: "Github",
+        href: "https://github.com"
+      },
+      {
+        type: "codepen",
+        text: "Codepen",
+        href: "https://codepen.com"
+      },
+      {
+        type: "demo",
+        text: "Demo",
+        href: "https://google.com"
+      }
+    ],
     tags: ["react", "javascript", "frontend"],
     img: "https://nwanesthesia.com/wp-content/uploads/2014/01/mk_1.jpg"
   },
@@ -25,10 +38,18 @@ const projectData = [
     date: "November 2018",
     brief: "Here's the second project I ever made. I used a lot of neato thingies. Unfortunately the brief is longer than usual and might mess up some spacing and alignment. Oh no.",
     description: "Here's a project I made up just now so that I have some dummy data to make the site with.",
-    links: {
-      code: "https://github.com",
-      demo: "https://codepen.com"
-    },
+    links: [
+      {
+        type: "github",
+        text: "Github",
+        href: "https://github.com"
+      },
+      {
+        type: "demo",
+        text: "Demo",
+        href: "https://google.com"
+      }
+    ],
     tags: ["react", "javascript", "frontend"],
     img: "https://nwanesthesia.com/wp-content/uploads/2014/01/mk_1.jpg"
   },
@@ -37,10 +58,13 @@ const projectData = [
     date: "October 2018",
     brief: "Here's the first project I ever made. It almost works!",
     description: "Here's a project I made up just now so that I have some dummy data to make the site with.",
-    links: {
-      code: "https://github.com",
-      demo: "https://codepen.com"
-    },
+    links: [
+      {
+        type: "demo",
+        text: "Demo",
+        href: "https://google.com"
+      }
+    ],
     tags: ["react", "javascript", "frontend", "backend", "redux", "gatsby", "typescript", "reallylongtagthatmightbreaksomething"]
   },
   {
@@ -48,10 +72,18 @@ const projectData = [
     date: "December 2018",
     brief: "Here's the third project I ever made.",
     description: "Here's a project I made up just now so that I have some dummy data to make the site with.",
-    links: {
-      code: "https://github.com",
-      demo: "https://codepen.com"
-    },
+    links: [
+      {
+        type: "github",
+        text: "Github",
+        href: "https://github.com"
+      },
+      {
+        type: "blog",
+        text: "Post",
+        href: "/blog"
+      }
+    ],
     tags: ["react", "javascript", "frontend"],
     img: "https://nwanesthesia.com/wp-content/uploads/2014/01/mk_1.jpg"
   },
@@ -60,10 +92,6 @@ const projectData = [
     date: "November 2018",
     brief: "Here's the second project I ever made. I used a lot of neato thingies. Unfortunately the brief is longer than usual and might mess up some spacing and alignment. Oh no.",
     description: "Here's a project I made up just now so that I have some dummy data to make the site with.",
-    links: {
-      code: "https://github.com",
-      demo: "https://codepen.com"
-    },
     tags: ["react", "javascript", "frontend"],
     img: "https://nwanesthesia.com/wp-content/uploads/2014/01/mk_1.jpg"
   },
@@ -72,10 +100,23 @@ const projectData = [
     date: "October 2018",
     brief: "Here's the first project I ever made. It almost works!",
     description: "Here's a project I made up just now so that I have some dummy data to make the site with.",
-    links: {
-      code: "https://github.com",
-      demo: "https://codepen.com"
-    },
+    links: [
+      {
+        type: "github",
+        text: "Github",
+        href: "https://github.com"
+      },
+      {
+        type: "codepen",
+        text: "Codepen",
+        href: "https://codepen.com"
+      },
+      {
+        type: "demo",
+        text: "Demo",
+        href: "https://google.com"
+      }
+    ],
     tags: ["react", "javascript", "frontend", "backend", "redux", "gatsby", "typescript", "reallylongtagthatmightbreaksomething"]
   }
 ]
