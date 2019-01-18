@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Tags from '../Portfolio/Tags'
+import defaultProjectThumbnail from '../../images/project.jpg'
 
 const Card = styled.div`
   background-color: white;
@@ -60,7 +61,7 @@ const ProjectCard = (props) => {
       <ProjectTitle onClick={()=>props.handleCardClick(props.projectId)}>
         {props.project.title}
       </ProjectTitle>
-      <Thumbnail src={props.project.img} onClick={()=>props.handleCardClick(props.projectId)}>
+      <Thumbnail src={props.project.img || defaultProjectThumbnail} onClick={()=>props.handleCardClick(props.projectId)}>
         <Tags tags={props.project.tags} handleTagClick={props.handleTagClick}></Tags>
       </Thumbnail>
       <ProjectBrief>

@@ -31,7 +31,7 @@ const projectData = [
       }
     ],
     tags: ["react", "javascript", "frontend"],
-    img: "https://nwanesthesia.com/wp-content/uploads/2014/01/mk_1.jpg"
+    img: undefined
   },
   {
     title: "My project 2",
@@ -51,7 +51,7 @@ const projectData = [
       }
     ],
     tags: ["react", "javascript", "frontend"],
-    img: "https://nwanesthesia.com/wp-content/uploads/2014/01/mk_1.jpg"
+    img: undefined
   },
   {
     title: "My project 1",
@@ -65,7 +65,8 @@ const projectData = [
         to: "https://google.com"
       }
     ],
-    tags: ["react", "javascript", "frontend", "backend", "redux", "gatsby", "typescript", "reallylongtagthatmightbreaksomething"]
+    tags: ["react", "javascript", "frontend", "backend", "redux", "gatsby", "typescript", "reallylongtagthatmightbreaksomething"],
+    image: undefined
   },
   {
     title: "My project 3",
@@ -85,7 +86,7 @@ const projectData = [
       }
     ],
     tags: ["react", "javascript", "frontend"],
-    img: "https://nwanesthesia.com/wp-content/uploads/2014/01/mk_1.jpg"
+    img: undefined
   },
   {
     title: "My project 2",
@@ -93,7 +94,7 @@ const projectData = [
     brief: "Here's the second project I ever made. I used a lot of neato thingies. Unfortunately the brief is longer than usual and might mess up some spacing and alignment. Oh no.",
     description: "Here's a project I made up just now so that I have some dummy data to make the site with.",
     tags: ["react", "javascript", "frontend"],
-    img: "https://nwanesthesia.com/wp-content/uploads/2014/01/mk_1.jpg"
+    img: undefined
   },
   {
     title: "My project 1",
@@ -117,7 +118,8 @@ const projectData = [
         to: "https://google.com"
       }
     ],
-    tags: ["react", "javascript", "frontend", "backend", "redux", "gatsby", "typescript", "reallylongtagthatmightbreaksomething"]
+    tags: ["react", "javascript", "frontend", "backend", "redux", "gatsby", "typescript", "reallylongtagthatmightbreaksomething"],
+    img: undefined
   }
 ]
 

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import ProjectLinks from './ProjectLinks'
 import Tags from '../Portfolio/Tags'
+import defaultProjectThumbnail from '../../images/project.jpg'
 
 const Close = styled.div`
   align-content: center;
@@ -99,7 +100,7 @@ const ProjectDetail = (props) => {
       </ProjectTitle>
 
       <Wrapper>
-        <Thumbnail src={props.project.img}/>
+        <Thumbnail src={props.project.img || defaultProjectThumbnail}/>
         <ProjectDetails>
           <Tags tags={props.project.tags} handleTagClick={props.handleTagClick} padding="0" noMargin="true"/>
           <ProjectBrief>
