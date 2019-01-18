@@ -17,17 +17,17 @@ const projectData = [
       {
         type: "github",
         text: "Github",
-        href: "https://github.com"
+        to: "https://github.com"
       },
       {
         type: "codepen",
         text: "Codepen",
-        href: "https://codepen.com"
+        to: "https://codepen.com"
       },
       {
         type: "demo",
         text: "Demo",
-        href: "https://google.com"
+        to: "https://google.com"
       }
     ],
     tags: ["react", "javascript", "frontend"],
@@ -42,12 +42,12 @@ const projectData = [
       {
         type: "github",
         text: "Github",
-        href: "https://github.com"
+        to: "https://github.com"
       },
       {
         type: "demo",
         text: "Demo",
-        href: "https://google.com"
+        to: "https://google.com"
       }
     ],
     tags: ["react", "javascript", "frontend"],
@@ -62,7 +62,7 @@ const projectData = [
       {
         type: "demo",
         text: "Demo",
-        href: "https://google.com"
+        to: "https://google.com"
       }
     ],
     tags: ["react", "javascript", "frontend", "backend", "redux", "gatsby", "typescript", "reallylongtagthatmightbreaksomething"]
@@ -76,12 +76,12 @@ const projectData = [
       {
         type: "github",
         text: "Github",
-        href: "https://github.com"
+        to: "https://github.com"
       },
       {
         type: "blog",
         text: "Post",
-        href: "/blog"
+        to: "blog"
       }
     ],
     tags: ["react", "javascript", "frontend"],
@@ -104,17 +104,17 @@ const projectData = [
       {
         type: "github",
         text: "Github",
-        href: "https://github.com"
+        to: "https://github.com"
       },
       {
         type: "codepen",
         text: "Codepen",
-        href: "https://codepen.com"
+        to: "https://codepen.com"
       },
       {
         type: "demo",
         text: "Demo",
-        href: "https://google.com"
+        to: "https://google.com"
       }
     ],
     tags: ["react", "javascript", "frontend", "backend", "redux", "gatsby", "typescript", "reallylongtagthatmightbreaksomething"]

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import ProjectLinks from './ProjectLinks'
 import Tags from '../Portfolio/Tags'
 
 const Close = styled.div`
@@ -107,7 +108,7 @@ const ProjectDetail = (props) => {
           <ProjectDescription>
             {props.project.description}
           </ProjectDescription>
-          <div>[Links to repo, demo, etc]</div>
+          <ProjectLinks links={props.project.links}/>
         </ProjectDetails>
       </Wrapper>
     </Project>
