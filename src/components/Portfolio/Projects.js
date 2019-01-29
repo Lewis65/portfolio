@@ -173,8 +173,8 @@ class Projects extends React.Component {
     if(items.length === 0){
       items = <p>Nothing here :(</p>
     }
-    const dupedTags = projectData.map(project => project.tags).flat().sort()
-    const allTags = Array.from(new Set(dupedTags))
+
+    const allTags = Array.from(new Set((projectData.map(project => project.tags)).flat()))
 
     let children;
     if(this.state.displayProject !== null){
