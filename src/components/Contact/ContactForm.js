@@ -50,6 +50,11 @@ class ContactForm extends React.Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
+  handleChange(e){
+    console.log(e.target)
+    this.setState({[e.target.name]: e.target.value})
+  }
+  
   handleSubmit(e){
     e.preventDefault()
     const message = {
@@ -58,11 +63,6 @@ class ContactForm extends React.Component {
       body: this.state.body
     }
     console.log(message)
-  }
-
-  handleChange(e){
-    console.log(e.target)
-    this.setState({[e.target.name]: e.target.value})
   }
 
   render(){
