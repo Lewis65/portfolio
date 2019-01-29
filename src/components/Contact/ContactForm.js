@@ -38,18 +38,45 @@ const Form = styled.form`
   max-width: 500px;
 `
 
-const ContactForm = () => {
-  return <React.Fragment>
-    <Form netlify>
+class ContactForm extends React.Component {
+
+  constructor(props){
+    super(props)
+    this.state = {
+      name: "",
+      email: "",
+      body: ""
+    }
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleSubmit(e){
+    e.preventDefault()
+    const message = {
+      name: this.state.name,
+      email: this.state.email,
+      body: this.state.body
+    }
+    console.log(message)
+  }
+
+  handleChange(e){
+    console.log(e.target)
+    this.setState({[e.target.name]: e.target.value})
+  }
+
+  render(){
+    return <Form>
       <label>Name</label>
-      <Field><input type="text"></input></Field>
+      <Field><input type="text" name="name" value={this.state.name} onChange={this.handleChange}></input></Field>
       <label>Email</label>
-      <Field><input type="text"></input></Field>
+      <Field><input type="text" name="email" value={this.state.email} onChange={this.handleChange}></input></Field>
       <label>Message</label>
-      <Field><textarea rows="8"></textarea></Field>
+      <Field><textarea rows="8" name="body" value={this.state.body} onChange={this.handleChange}></textarea></Field>
       <Button>Send</Button>
     </Form>
-  </React.Fragment>
+    
+  }
 }
 
 export default ContactForm
