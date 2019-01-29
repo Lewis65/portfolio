@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet'
 
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 import Theme from './theme.js'
-import Header from './Header/header'
+import Header from './Header/Header.js'
 
 const GlobalStyle = createGlobalStyle`
   body {
