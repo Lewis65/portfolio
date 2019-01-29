@@ -54,6 +54,9 @@ typings/
 # dotenv environment variables file
 .env
 
+# app config file
+config.json
+
 # gatsby files
 .cache/
 public
