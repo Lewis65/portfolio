@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Button from '../shared/Button'
+import Button from '../shared/ButtonLink'
 import Avatar from './Avatar'
 import Nav from './Nav'
 import Social from './Social'
