@@ -38,10 +38,9 @@ const Form = styled.form`
   max-width: 500px;
 `
 
-//Implement simple plaintext Nodemailer form
 const ContactForm = () => {
   return <React.Fragment>
-    <Form>
+    <Form netlify>
       <label>Name</label>
       <Field><input type="text"></input></Field>
       <label>Email</label>
