@@ -1,14 +1,13 @@
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
-const Button = styled.button`
+const Button = styled(Link)`
   background-color: ${props => props.theme.colors.active};
-  border: none;
   border-radius: 1rem;
   box-shadow: ${props => props.theme.smallShadow};
   color: ${props => props.theme.colors.bg1};
   font-size: 120%;
   margin: 1rem auto;
-  outline: none;
   padding: 6px;
   text-align: center;
   text-decoration: none;
