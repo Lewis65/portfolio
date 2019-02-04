@@ -1,0 +1,12 @@
+{
+    "contentful": {
+        "dev": {
+            "spaceId": "",
+            "accessToken": ""
+        },
+        "production": {
+            "spaceId": "",
+            "accessToken": ""
+        }
+    }
+}
