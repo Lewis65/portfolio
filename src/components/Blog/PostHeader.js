@@ -4,7 +4,7 @@ import React from 'react'
 import Heading from '../shared/Heading'
 
 const Header = styled.div`
-    background: ${props => props.theme.colors.highlight} ${props => props.featuredImage} no-repeat center center;
+    background: ${props => props.theme.colors.highlight} url(${props => props.featuredImage}) no-repeat center center;
     background-size: cover;
     color: white;
     padding: 3rem;
