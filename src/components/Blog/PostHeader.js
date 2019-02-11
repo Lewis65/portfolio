@@ -9,7 +9,7 @@ const Header = styled.div`
     color: white;
     padding: 2rem 1rem;
     @media screen and (min-width: 1024px) {
-        padding: 4rem 3rem;
+        padding: 3rem 4rem;
     }
 `
 
