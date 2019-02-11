@@ -7,12 +7,15 @@ const Header = styled.div`
     background: ${props => props.theme.colors.highlight} ${props => props.featuredImage} no-repeat center center;
     background-size: cover;
     color: white;
-    padding: 3rem;
+    padding: 2rem 1rem;
+    @media screen and (min-width: 1024px) {
+        padding: 4rem 3rem;
+    }
 `
 
 const PostHeader = (props) => {
     return <Header>
-        <Heading hero>{props.title || "Untitled post"}</Heading>
+        <Heading blog>{props.title || "Untitled post"}</Heading>
     </Header>
 }
 
