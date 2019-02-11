@@ -3,7 +3,12 @@ import React from 'react'
 
 const Body = styled.div`
     color: ${props => props.theme.colors.body};
-    padding: 3rem;
+    font-size: 120%;
+    padding: 0.5rem;
+    @media screen and (min-width: 1024px){
+        font-size: 150%;
+        padding: 3rem;
+    }
 `
 
 const PostBody = (props) => {
