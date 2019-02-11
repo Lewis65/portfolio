@@ -9,6 +9,15 @@ const Body = styled.div`
         font-size: 150%;
         padding: 3rem;
     }
+    a {
+        border-bottom: 2px solid ${props => props.theme.colors.active};
+        color: ${props => props.theme.colors.active};
+        padding-bottom: -2px;
+        text-decoration: none;
+        :active, :visited {
+            color: ${props => props.theme.colors.activeShade};
+        }
+    }
 `
 
 const PostBody = (props) => {
