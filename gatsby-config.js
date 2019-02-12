@@ -1,3 +1,5 @@
+const secrets = require('./secrets.json')
+
 module.exports = {
   siteMetadata: {
     title: 'Lewis Horwood',
@@ -16,8 +18,8 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+        spaceId: secrets.contentfulSpaceId,
+        accessToken: secrets.contentfulAccessToken
       }
     },
     'gatsby-transformer-sharp',

@@ -55,7 +55,7 @@ typings/
 .env
 
 # app config file
-config.json
+secrets.json
 
 # gatsby files
 .cache/
