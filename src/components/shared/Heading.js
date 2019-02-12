@@ -11,7 +11,7 @@ const Heading = styled.h1`
   padding: 1rem;
   @media screen and (min-width: 1024px) {
     font-size: 500%;
-    margin-bottom: ${props => props.hero ? "2rem" : 0};
+    margin-bottom: ${props => props.blog ? 0 : "2rem"};
   }
 `
 
