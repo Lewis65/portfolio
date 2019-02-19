@@ -13,8 +13,13 @@ exports.createPages = ({graphql, actions}) => {
                         title
                         slug
                         tags
+                        description {
+                            description
+                        }
                         bodyText {
-                            bodyText
+                            childMarkdownRemark {
+                                html
+                            }
                         }
                     }
                 }

@@ -3,7 +3,6 @@ import React from 'react'
 
 const Body = styled.div`
     color: ${props => props.theme.colors.body};
-    font-size: 120%;
     padding: 0.5rem;
     @media screen and (min-width: 1024px){
         font-size: 150%;
@@ -18,10 +17,34 @@ const Body = styled.div`
             color: ${props => props.theme.colors.activeShade};
         }
     }
+    h1, h2, h3 {
+        margin: 2rem auto 1rem auto;
+        &:first-child {
+            margin-top: 1rem;
+        }
+        @media screen and (min-width: 1024px){
+            margin: 4rem auto 2rem auto;
+            &:first-child {
+                margin-top: 2rem;
+            }
+        }
+    }
+    h1 {
+        color: ${props => props.theme.colors.active};
+        font-weight: bold;
+    }
+    p {
+        line-height: 200%;
+        @media screen and (min-width: 1024px){
+        }
+    }
 `
 
 const PostBody = (props) => {
-    return <Body>{props.body || "No body text sent :("}</Body>
+    const markup = {
+        __html: props.body
+    }
+    return <Body dangerouslySetInnerHTML={markup}></Body>
 }
 
 export default PostBody

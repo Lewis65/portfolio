@@ -1,6 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
-import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -10,7 +8,9 @@ import Post from '../components/Blog/Post'
 let postData = {
   title: "Error",
   bodyText: {
-    bodyText: "Oops. Something's gone wrong. Sorry about that."
+    childMarkdownRemark: {
+      html: "Oops. Something's gone wrong. Sorry about that."
+    }
   },
   featuredImage: undefined,
   tags: ["oopsie"]

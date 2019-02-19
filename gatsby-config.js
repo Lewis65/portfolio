@@ -22,6 +22,9 @@ module.exports = {
         accessToken: secrets.contentfulAccessToken
       }
     },
+    {
+      resolve: `gatsby-transformer-remark`
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-styled-components'
