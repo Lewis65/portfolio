@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 const Post = (props) => {
     return <Wrapper>
         <Header title={props.data.title}/>
-        <Body body={props.data.body}/>
+        <Body body={props.data.bodyText.bodyText}/>
     </Wrapper>
 }
 

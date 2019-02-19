@@ -11,7 +11,7 @@ const Info = styled.div`
 `
 
 const PostBody = (props) => {
-    return <Info>{props.body || "No body text sent :("}</Info>
+    return <Info></Info>
 }
 
 export default PostBody
