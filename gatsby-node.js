@@ -1,0 +1,33 @@
+const path = require("path")
+
+//Create pages from Contentful blog posts
+exports.createPages = ({graphql, actions}) => {
+    const {createPage} = actions
+    const template = path.resolve('./src/templates/post.js')
+    return graphql(`
+        {
+            allContentfulBlogPost {
+                edges {
+                    node {
+                        slug
+                    }
+                }
+            }
+        }
+    `).then(result => {
+        console.log(result)
+
+        if(result.hasOwnProperty('errors')){
+            throw result.errors
+        }
+
+        //Create pages
+        result.data.allContentfulBlogPost.edges.forEach(edge => {
+            createPage({
+                path: `/blog/${edge.node.slug}`,
+                component: template
+            })
+            console.log(`Created page at /blog/${edge.node.slug}`)
+        })
+    })
+}
