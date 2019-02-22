@@ -11,8 +11,18 @@ const Wrapper = styled.div`
 
 const Post = (props) => {
     return <Wrapper>
-        <Header title={props.data.title}/>
-        <Body body={props.data.bodyText.childMarkdownRemark.html}/>
+        <Header
+            title={props.data.title}
+            featuredImage={props.data.featuredImage}
+        />
+        <Info
+            createdAt={props.data.createdAt}
+            updatedAt={props.data.updatedAt}
+            tags={props.data.tags}
+        />
+        <Body
+            body={props.data.bodyText.childMarkdownRemark.html}
+        />
     </Wrapper>
 }
 
