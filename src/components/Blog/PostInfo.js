@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import React from 'react'
 
+import Tags from '../shared/Tags'
+
 const Info = styled.div`
     color: ${props => props.theme.colors.body};
     padding: 1rem 0.5rem;
@@ -12,9 +14,11 @@ const Info = styled.div`
 
 const PostInfo = (props) => {
     return <Info
-        createdAt={props.data.createdAt}
-        updatedAt={props.data.updatedAt}
-        />
+        createdAt={props.createdAt}
+        updatedAt={props.updatedAt}
+        >
+            <Tags tags={props.tags}/>
+        </Info>
 }
 
 export default PostInfo
