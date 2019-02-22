@@ -14,26 +14,26 @@ const Tags = (props) => {
   let tags = []
   switch (props.tagType){
     case 'blog':
-      tags = props.tags.map(item => {
-        return <Tag large tag={item} tagType={props.tagType}/>
+      tags = props.tags.map((item, key) => {
+        return <Tag large key={key} tag={item} tagType={props.tagType}/>
       })
       break;
     case 'projectCard':
-      tags = props.tags.map(item => {
-        return <Tag tag={item} tagType={props.tagType} handleTagClick={props.handleTagClick} filters={props.filters}/>
+      tags = props.tags.map((item, key) => {
+        return <Tag key={key} tag={item} tagType={props.tagType} handleTagClick={props.handleTagClick} filters={props.filters}/>
       })
       break;
     case 'projectList':
-      tags = props.tags.map(item => {
-        return <Tag large tag={item} tagType={props.tagType} handleTagClick={props.handleTagClick} filters={props.filters}/>
+      tags = props.tags.map((item, key) => {
+        return <Tag large key={key} tag={item} tagType={props.tagType} handleTagClick={props.handleTagClick} filters={props.filters}/>
       })
       if(props.filterByTag && props.filterByTag !== null){
         tags.unshift(<Tag tag={props.filterByTag + " X"} tagType={props.tagType} handleTagClick={() => props.handleTagClick(null)} activeFilter="true" filters={props.filters}/>)
       }
       break;
     default:
-      tags = props.tags.map(item => {
-        return <Tag tag={item} tagType={props.tagType}/>
+      tags = props.tags.map((item, key) => {
+        return <Tag key={key} tag={item} tagType={props.tagType}/>
       })
       break;
   }
