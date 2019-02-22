@@ -17,7 +17,7 @@ const PostInfo = (props) => {
         createdAt={props.createdAt}
         updatedAt={props.updatedAt}
         >
-            <Tags tags={props.tags}/>
+            <Tags tags={props.tags} tagType="blog"/>
         </Info>
 }
 

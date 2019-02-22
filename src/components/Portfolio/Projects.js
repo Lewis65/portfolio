@@ -182,7 +182,7 @@ class Projects extends React.Component {
     } else {
       children = (
         <React.Fragment>
-          <Tags tags={allTags} handleTagClick={this.handleTagClick} filterByTag={this.state.filterByTag} filters="true"/>
+          <Tags tags={allTags} tagType="projectList" handleTagClick={this.handleTagClick} filterByTag={this.state.filterByTag}/>
           <ProjectWrapper>{items}</ProjectWrapper>
         </React.Fragment>
       )

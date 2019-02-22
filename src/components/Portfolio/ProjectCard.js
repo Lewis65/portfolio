@@ -62,7 +62,7 @@ const ProjectCard = (props) => {
         {props.project.title}
       </ProjectTitle>
       <Thumbnail src={props.project.img || defaultProjectThumbnail} onClick={()=>props.handleCardClick(props.projectId)}>
-        <Tags tags={props.project.tags} handleTagClick={props.handleTagClick}></Tags>
+        <Tags tags={props.project.tags} tagType="projectCard" handleTagClick={props.handleTagClick}></Tags>
       </Thumbnail>
       <ProjectBrief>
         {props.project.brief}
