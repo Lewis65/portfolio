@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import React from 'react'
 
-import Tag from '../Portfolio/Tag'
+import Tag from './Tag'
 
 const TagContainer = styled.div`
   display: flex;

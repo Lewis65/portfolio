@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Tags from '../Portfolio/Tags'
+import Tags from '../shared/Tags'
 import defaultProjectThumbnail from '../../images/project.jpg'
 
 const Card = styled.div`

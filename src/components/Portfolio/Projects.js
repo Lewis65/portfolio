@@ -4,7 +4,7 @@ import React from 'react'
 import BlockWrapper from '../shared/BlockWrapper'
 import ProjectCard from './ProjectCard'
 import ProjectDetail from './ProjectDetail'
-import Tags from './Tags'
+import Tags from '../shared/Tags'
 
 //dummy data
 const projectData = [
