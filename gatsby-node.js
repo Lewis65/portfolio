@@ -16,6 +16,11 @@ exports.createPages = ({graphql, actions}) => {
                         description {
                             description
                         }
+                        featuredImage {
+                            fluid {
+                                base64
+                            }
+                        }
                         bodyText {
                             childMarkdownRemark {
                                 html
