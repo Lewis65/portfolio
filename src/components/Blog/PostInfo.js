@@ -10,8 +10,11 @@ const Info = styled.div`
     }
 `
 
-const PostBody = (props) => {
-    return <Info></Info>
+const PostInfo = (props) => {
+    return <Info
+        createdAt={props.data.createdAt}
+        updatedAt={props.data.updatedAt}
+        />
 }
 
-export default PostBody
+export default PostInfo
