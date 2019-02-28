@@ -20,7 +20,7 @@ exports.createPages = ({graphql, actions}) => {
                         }
                         featuredImage {
                             fluid {
-                                base64
+                                src
                             }
                         }
                         bodyText {

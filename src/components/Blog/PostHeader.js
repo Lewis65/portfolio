@@ -4,6 +4,7 @@ import React from 'react'
 import Heading from '../shared/Heading'
 
 const Header = styled.div`
+    background-image: ${props => props.featuredImage ? `url(${props.featuredImage.fluid.src})` : "none"};
     background-color: ${props => props.theme.colors.highlight};
     background-size: cover;
     color: white;
@@ -14,7 +15,7 @@ const Header = styled.div`
 `
 
 const PostHeader = (props) => {
-    return <Header>
+    return <Header featuredImage={props.featuredImage}>
         <Heading blog>{props.title || "Untitled post"}</Heading>
     </Header>
 }
