@@ -10,6 +10,7 @@ const Wrapper = styled.div`
 `
 
 const Post = (props) => {
+    console.log('Post props', props)
     return <Wrapper>
         <Header
             title={props.data.title}

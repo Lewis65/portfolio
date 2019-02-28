@@ -3,6 +3,7 @@ export default {
         bg1: "#F9FBF2",
         bg2: "#FFE74C",
         body: "#262322",
+        secondary: "#726966",
         active: "#EF476F",
         activeShade: "#D33F49",
         highlight: "#083D77",

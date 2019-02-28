@@ -12,6 +12,8 @@ exports.createPages = ({graphql, actions}) => {
                         id
                         title
                         slug
+                        createdAt
+                        updatedAt
                         tags
                         description {
                             description
@@ -31,8 +33,6 @@ exports.createPages = ({graphql, actions}) => {
             }
         }
     `).then(result => {
-        console.log(result)
-
         if(result.hasOwnProperty('errors')){
             throw result.errors
         }
