@@ -5,7 +5,7 @@ const Body = styled.div`
     color: ${props => props.theme.colors.body};
     padding: 0.5rem;
     @media screen and (min-width: 1024px){
-        font-size: 150%;
+        font-size: 1.2em;
         padding: 3rem;
     }
     a {
@@ -14,6 +14,7 @@ const Body = styled.div`
         padding-bottom: -2px;
         text-decoration: none;
         :active, :visited {
+            border-bottom: 2px solid ${props => props.theme.colors.activeShade};
             color: ${props => props.theme.colors.activeShade};
         }
     }
@@ -34,12 +35,7 @@ const Body = styled.div`
         font-weight: bold;
     }
     p {
-        font-size: 16px;
-        line-height: 32px;
-        @media screen and (min-width: 1024px){
-            font-size: 18px;
-            line-height: 36px;
-        }
+        line-height: 2;
     }
 `
 
