@@ -26,10 +26,9 @@ const InfoItem = styled.div`
 `
 
 const PostInfo = (props) => {
-    console.log('PostInfo props', props)
     let timestamps = [<InfoItem key="1">Posted {moment(props.createdAt).format("MMMM Do YYYY")}</InfoItem>]
     if(props.updatedAt){
-        timestamps.push(<InfoItem key="2">Updated {moment(props.updatedAt).fromNow()}</InfoItem>)
+        timestamps.push(<InfoItem key="2"> • Updated {moment(props.updatedAt).fromNow()}</InfoItem>)
     }
     return <Info>
         <InfoBlock>

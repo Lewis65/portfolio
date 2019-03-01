@@ -10,7 +10,6 @@ const Wrapper = styled.div`
 `
 
 const Post = (props) => {
-    console.log('Post props', props)
     return <Wrapper>
         <Header
             title={props.data.title}
@@ -19,6 +18,7 @@ const Post = (props) => {
         <Info
             createdAt={props.data.createdAt}
             updatedAt={props.data.updatedAt}
+            test={props.data}
             tags={props.data.tags}
         />
         <Body
