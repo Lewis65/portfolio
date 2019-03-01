@@ -34,8 +34,11 @@ const Body = styled.div`
         font-weight: bold;
     }
     p {
-        line-height: 200%;
+        font-size: 16px;
+        line-height: 32px;
         @media screen and (min-width: 1024px){
+            font-size: 18px;
+            line-height: 36px;
         }
     }
 `
