@@ -24,14 +24,15 @@ export const pageQuery = graphql`
     allContentfulBlogPost {
       edges {
         node {
-          id
           title
-          
+          slug
+          featuredImage {
+            fluid {
+              src
+            }
+          }
           description {
             description
-          }
-          bodyText {
-            bodyText
           }
         }
       }

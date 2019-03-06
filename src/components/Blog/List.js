@@ -4,7 +4,8 @@ import React from 'react'
 import Card from './Card'
 
 const Wrapper = styled.div`
-
+    display: flex;
+    justify-content: space-between;
 `
 
 const List = (props) => {
