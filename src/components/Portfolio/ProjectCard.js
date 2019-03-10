@@ -27,6 +27,11 @@ const Card = styled.div`
     font-size: 90%;
     justify-content: space-between;
     margin: 0 2rem 2rem 0;
+    &:hover {
+      h3 {
+        background-color: ${props => props.theme.colors.lightblue};
+      }
+    }
   }
 `
 
@@ -42,11 +47,13 @@ const ProjectTitle = styled.h3`
   font-size: 125%;
   margin: 0;
   padding: 1rem;
+  @media screen and (min-width: 1024px) {
+    transition: background-color 0.15s ease-out;
+  }
 `
 
 const Thumbnail = styled.div`
-  background: linear-gradient(to bottom, white, cyan) center / cover;
-  background-image: url(${props => props.src});
+  background: url(${props => props.src}) center / cover;
   max-height: 300px;
   min-height: 200px;
   width: 100%;

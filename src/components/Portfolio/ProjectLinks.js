@@ -23,9 +23,9 @@ const LinkGroup = styled.div`
 `
 
 const ProjectLink = styled(Link)`
-  border: 2px solid ${props => props.theme.colors.highlight};
-  border-radius: 8px;
-  color: ${props => props.theme.colors.highlight};
+  border: 2px solid ${props => props.theme.colors.lightblue};
+  border-radius: 0.5rem;
+  color: ${props => props.theme.colors.darkblue};
   display: flex;
   flex: 1;
   font-weight: 600;
@@ -33,30 +33,22 @@ const ProjectLink = styled(Link)`
   margin-right: 0.5rem;
   padding: 0.25rem;
   text-decoration: none;
-  &:hover {
-    animation: lighten ease-out 0.1s forwards;
-  }
   span {
-    margin-left: 0.25rem;
+    margin-left: 0.5rem;
   }
   i {
     font-size: 110%;
   }
-  @keyframes lighten {
-    0% {
-      border-color: ${props => props.theme.colors.darkblue};
-      color: ${props => props.theme.colors.darkblue};
-    }
-    100% {
-      border-color: ${props => props.theme.colors.lightblue};
-      color: ${props => props.theme.colors.lightblue};
-    }
-  }
   @media screen and (max-width: 1200px) {
     margin-right: 0;
     margin-bottom: 0.5rem;
+    transition: border-color 0.15s ease-out, color 0.15s ease-out;
     &:last-child {
       margin-bottom: 0;
+    }
+    &:hover {
+      border-color: ${props => props.theme.colors.pink};
+      color: ${props => props.theme.colors.pink};
     }
   }
 `
