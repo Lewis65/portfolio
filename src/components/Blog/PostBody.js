@@ -9,13 +9,13 @@ const Body = styled.div`
         padding: 3rem;
     }
     a {
-        border-bottom: 2px solid ${props => props.theme.colors.active};
-        color: ${props => props.theme.colors.active};
+        border-bottom: 2px solid ${props => props.theme.colors.lightblue};
+        color: ${props => props.theme.colors.lightblue};
         padding-bottom: -2px;
         text-decoration: none;
         :active, :visited {
-            border-bottom: 2px solid ${props => props.theme.colors.activeShade};
-            color: ${props => props.theme.colors.activeShade};
+            border-bottom: 2px solid ${props => props.theme.colors.darkblue};
+            color: ${props => props.theme.colors.darkblue};
         }
     }
     h1, h2, h3 {
@@ -31,7 +31,7 @@ const Body = styled.div`
         }
     }
     h1 {
-        color: ${props => props.theme.colors.active};
+        color: ${props => props.theme.colors.pink};
         font-weight: bold;
     }
     p {

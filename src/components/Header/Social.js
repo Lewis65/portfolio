@@ -8,30 +8,29 @@ const SocialWrapper = styled.div`
   width: 100%;
 `
 const SocialLink = styled.a`
-  background-color: ${props => props.theme.colors.body};
-  color: ${props => props.theme.colors.bg1};
+  background-color: white;
+  color: ${props => props.theme.colors.darkblue};
   border-radius: 50%;
   box-shadow: ${props => props.theme.smallShadow};
   box-sizing: border-box;
   font-size: 24px;
-  height: 36px;
-  line-height: 24px;
-  padding-top: 5px;
+  height: 40px;
+  line-height: 30px;
+  padding: 5px;
   text-decoration: none;
   text-align: center;
-  width: 36px;
+  width: 40px;
   @media screen and (min-width: 1024px) {
     margin-top: 1rem;
     &:hover {
-      animation: "perkup" 0.2s forwards ease-out;
-      color: white;
+      animation: lighten ease-out 0.1s forwards;
     }
-    @keyframes perkup {
+    @keyframes lighten {
       0% {
-        margin-top: 1rem;
+        color: ${props => props.theme.colors.darkblue};
       }
       100% {
-        margin-top: 0.75rem;
+        color: ${props => props.theme.colors.lightblue};
       }
     }
   }

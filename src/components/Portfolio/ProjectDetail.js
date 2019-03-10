@@ -7,7 +7,7 @@ import defaultProjectThumbnail from '../../images/project.jpg'
 
 const Close = styled.div`
   align-content: center;
-  border: 3px solid white;
+  border: 2px solid white;
   border-radius: 40px;
   cursor: pointer;
   display: inline-flex;
@@ -67,7 +67,7 @@ const ProjectDetails = styled.div`
 `
 
 const ProjectTitle = styled.h3`
-  background-color: ${props => props.theme.colors.highlight};
+  background-color: ${props => props.theme.colors.darkblue};
   box-sizing: border-box;
   color: white;
   display: block;

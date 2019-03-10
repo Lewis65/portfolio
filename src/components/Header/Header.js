@@ -7,7 +7,7 @@ import Nav from './Nav'
 import Social from './Social'
 
 const HeaderTitle = styled.h1`
-  color: ${props => props.theme.colors.body};
+  color: white;
   font-family: ${props => props.theme.fonts.header};
   font-size: 300%;
   margin: 0;
@@ -43,7 +43,7 @@ const HeaderMiddleWrapper = styled.div`
 `
 
 const HeaderWrapper = styled.header`
-  background-color: ${props => props.theme.colors.bg2};
+  background-color: ${props => props.theme.colors.darkblue};
   box-sizing: border-box;
   display: flex;
   flex-direction: column;

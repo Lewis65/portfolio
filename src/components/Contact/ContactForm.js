@@ -5,10 +5,13 @@ import Button from '../shared/Button'
 
 const Field = styled.div`
   background-color: white;
-  border: 2px solid ${props => props.theme.colors.highlight};
+  border: 2px solid ${props => props.theme.colors.darkblue};
   border-radius: 1rem;
   margin-bottom: 1rem;
   padding: 0.5rem;
+  &:focus-within {
+    border-color: ${props => props.theme.colors.lightblue};
+  }
   input, textarea {
     border: 0;
     box-sizing: border-box;

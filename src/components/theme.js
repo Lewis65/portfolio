@@ -1,12 +1,7 @@
 export default {
     colors: {
-        bg1: "#F9FBF2",
-        bg2: "#FFE74C",
         body: "#262322",
         secondary: "#726966",
-        active: "#EF476F",
-        activeShade: "#D33F49",
-        highlight: "#083D77",
         shadow: "rgba(0,0,0,0.1)",
         offwhite: "#ebf2fa",
         red: "#e3170a",

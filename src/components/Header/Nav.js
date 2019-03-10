@@ -3,8 +3,8 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 const NavLink = styled(Link)`
-  border-bottom: 4px solid ${props => props.theme.colors.body};
-  color: ${props => props.theme.colors.body};
+  border-bottom: 4px solid ${props => props.theme.colors.pink};
+  color: white;
   flex-grow: 1;
   font-size: 100%;
   font-weight: 600;
@@ -12,7 +12,7 @@ const NavLink = styled(Link)`
   text-align: center;
   text-decoration: none;
   &:hover {
-      border-bottom: 4px solid ${props => props.theme.colors.active}
+      border-bottom: 4px solid ${props => props.theme.colors.red}
   }
   @media screen and (min-width: 1024px) {
     font-size: 120%;
@@ -22,7 +22,6 @@ const NavLink = styled(Link)`
 `
 
 const NavWrapper = styled.nav`
-  background: ${props => props.theme.colors.bg1};
   display: flex;
   margin-top: 1rem;
   position: relative;
@@ -39,10 +38,9 @@ const NavWrapper = styled.nav`
 
 const Nav = () => (
   <NavWrapper id="nav">
-    <NavLink to='/#nav'>about</NavLink>
-    <NavLink to='/portfolio#nav'>portfolio</NavLink>
-    <NavLink to='/contact#nav'>contact</NavLink>
-    <NavLink to='/blog#nav'>blog</NavLink>
+    <NavLink to='/'>about</NavLink>
+    <NavLink to='/portfolio'>portfolio</NavLink>
+    <NavLink to='/blog'>blog</NavLink>
   </NavWrapper>
 )
 

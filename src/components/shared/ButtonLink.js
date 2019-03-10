@@ -2,10 +2,10 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 
 const Button = styled(Link)`
-  background-color: ${props => props.theme.colors.active};
+  background-color: ${props => props.theme.colors.pink};
   border-radius: 1rem;
   box-shadow: ${props => props.theme.smallShadow};
-  color: ${props => props.theme.colors.bg1};
+  color: white;
   font-size: 120%;
   margin: 1rem auto;
   padding: 6px;
@@ -20,10 +20,10 @@ const Button = styled(Link)`
   }
   @keyframes perkup {
     0% {
-      margin-top: 1rem;
+      margin: 1.25rem auto 0.75rem;
     }
     100% {
-      margin-top: 0.75rem;
+      margin: 0.75rem auto 1.25rem;
     }
   }
 `

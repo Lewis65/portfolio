@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
 const Button = styled.button`
-  background-color: ${props => props.theme.colors.active};
+  background-color: ${props => props.theme.colors.pink};
   border: none;
   border-radius: 1rem;
   box-shadow: ${props => props.theme.smallShadow};
-  color: ${props => props.theme.colors.bg1};
+  color: white;
   font-size: 120%;
-  margin: 1rem auto;
+  margin: 1.25rem auto 0.75rem;
   outline: none;
   padding: 6px;
   text-align: center;
@@ -21,10 +21,10 @@ const Button = styled.button`
   }
   @keyframes perkup {
     0% {
-      margin-top: 1rem;
+      margin: 1.25rem auto 0.75rem;
     }
     100% {
-      margin-top: 0.75rem;
+      margin: 0.75rem auto 1.25rem;
     }
   }
 `

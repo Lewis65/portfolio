@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import React from 'react'
 
 const TagLink = styled.a`
-  background-color: ${props => props.activeFilter==="true" ? props.theme.colors.activeShade : props.theme.colors.active};
+  background-color: ${props => props.activeFilter==="true" ? props.theme.colors.red : props.theme.colors.pink};
   border-radius: 20px;
   color: white;
   cursor: pointer;
@@ -13,7 +13,7 @@ const TagLink = styled.a`
   margin-right: 6px;
   padding: ${props => props.padding || props.large ? "4px 12px" : "2px 8px"};
   &:hover {
-    background-color: ${props => props.theme.colors.activeShade};
+    background-color: ${props => props.theme.colors.red};
   }
   &:last-child {
     margin-right: 0;

@@ -6,7 +6,7 @@ import ProjectCard from './ProjectCard'
 import ProjectDetail from './ProjectDetail'
 import Tags from '../shared/Tags'
 
-//dummy data
+//dummy data - replace with Contentful later
 const projectData = [
   {
     title: "My project 3",
@@ -151,7 +151,6 @@ class Projects extends React.Component {
   }
 
   handleProjectClose = () => {
-    console.log("goose")
     this.setState({displayProject: null})
   }
 

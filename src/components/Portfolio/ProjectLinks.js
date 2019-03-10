@@ -34,14 +34,23 @@ const ProjectLink = styled(Link)`
   padding: 0.25rem;
   text-decoration: none;
   &:hover {
-    border-color: ${props => props.theme.colors.active};
-    color: ${props => props.theme.colors.active};
+    animation: lighten ease-out 0.1s forwards;
   }
   span {
     margin-left: 0.25rem;
   }
   i {
     font-size: 110%;
+  }
+  @keyframes lighten {
+    0% {
+      border-color: ${props => props.theme.colors.darkblue};
+      color: ${props => props.theme.colors.darkblue};
+    }
+    100% {
+      border-color: ${props => props.theme.colors.lightblue};
+      color: ${props => props.theme.colors.lightblue};
+    }
   }
   @media screen and (max-width: 1200px) {
     margin-right: 0;

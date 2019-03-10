@@ -24,7 +24,7 @@ const MainWrapper = styled.div`
 `
 
 const Wrapper = styled.div`
-  background-color: ${props => props.theme.colors.bg1};
+  background-color: ${props => props.theme.colors.offwhite};
   display: flex;
   flex-direction: column;
   font-family: ${props => props.theme.fonts.body};

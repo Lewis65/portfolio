@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 
 const Heading = styled.h1`
-  background-color: ${props => props.hero || props.blog ? "white" : props.theme.colors.bg2};
-  box-shadow: 8px 8px ${props => props.hero || props.blog ?  props.theme.colors.active : props.theme.colors.shadow};
+  background-color: ${props => props.hero || props.blog ? "white" : "none"};
+  box-shadow: ${props => props.hero || props.blog ?  `8px 8px 0 ${props.theme.colors.active}` : "none"};
   color: ${props => props.hero || props.blog ? props.theme.colors.highlight : props.theme.colors.body};
   display: inline-block;
   font-family: ${props => props.theme.fonts.header};
   font-size: ${props => props.blog ? "200%" : "56px"};
   margin: 0 auto 1rem 0;
-  padding: 1rem;
+  padding: ${props => props.hero || props.blog ? "1rem" : "0"};
   @media screen and (min-width: 1024px) {
     font-size: 500%;
     margin-bottom: ${props => props.blog ? 0 : "2rem"};

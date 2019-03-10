@@ -36,7 +36,7 @@ const ProjectBrief = styled.div`
 `
 
 const ProjectTitle = styled.h3`
-  background-color: ${props => props.theme.colors.highlight};
+  background-color: ${props => props.theme.colors.darkblue};
   color: white;
   display: block;
   font-size: 125%;

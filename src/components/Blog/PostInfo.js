@@ -6,7 +6,6 @@ import Tags from '../shared/Tags'
 
 const Info = styled.div`
     border-bottom: 1px solid ${props => props.theme.colors.secondary};
-    color: ${props => props.theme.colors.body};
     padding: 1rem 0;
     margin: 0 1rem;
     @media screen and (min-width: 1024px){
