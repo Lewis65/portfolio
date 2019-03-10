@@ -1,7 +1,6 @@
-import styled from 'styled-components'
 import React from 'react'
 
-import BlockWrapper from '../shared/BlockWrapper'
+import CardTable from '../shared/CardTable'
 import ProjectCard from './ProjectCard'
 import ProjectDetail from './ProjectDetail'
 import Tags from '../shared/Tags'
@@ -123,19 +122,6 @@ const projectData = [
   }
 ]
 
-const ProjectWrapper = styled(BlockWrapper)`
-  align-items: flex-start;
-  flex-direction: column;
-  width: 100%;
-  @media screen and (min-width: 1024px) {
-    align-items: stretch;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 1rem;
-  }
-`
-
 class Projects extends React.Component {
 
   constructor(props) {
@@ -182,7 +168,7 @@ class Projects extends React.Component {
       children = (
         <React.Fragment>
           <Tags tags={allTags} tagType="projectList" handleTagClick={this.handleTagClick} filterByTag={this.state.filterByTag}/>
-          <ProjectWrapper>{items}</ProjectWrapper>
+          <CardTable>{items}</CardTable>
         </React.Fragment>
       )
     }

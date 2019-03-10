@@ -11,12 +11,10 @@ const Card = styled.div`
   box-sizing: border-box;
   cursor: pointer;
   display: flex;
-  flex: 1;
   flex-direction: column;
   font-size: 75%;
   overflow-x: hidden;
-  margin: 0 1rem 1rem 0;
-  min-width: 300px;
+  margin-bottom: 1rem;
   padding: 0;
   user-select: none;
   width: 100%;
@@ -25,8 +23,6 @@ const Card = styled.div`
   -webkit-user-select: none;
   @media screen and (min-width: 1024px) {
     font-size: 90%;
-    justify-content: space-between;
-    margin: 0 2rem 2rem 0;
     &:hover {
       h3 {
         background-color: ${props => props.theme.colors.lightblue};

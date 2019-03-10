@@ -2,12 +2,7 @@ import styled from 'styled-components'
 import React from 'react'
 
 import Card from './Card'
-
-const Wrapper = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-`
+import CardTable from '../shared/CardTable'
 
 const List = (props) => {
 
@@ -15,9 +10,9 @@ const List = (props) => {
         return <Card post={post.node} key={index}></Card>
     })
 
-    return <Wrapper>
+    return <CardTable>
         {cards}
-    </Wrapper>
+    </CardTable>
 }
 
 export default List
