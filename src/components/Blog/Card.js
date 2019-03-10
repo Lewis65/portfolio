@@ -14,6 +14,7 @@ const CardInfo = styled.div`
 const CardTitle = styled.h2`
     color: ${props => props.theme.colors.pink};
     text-shadow: 2px 2px 0 ${props => props.theme.colors.shadow};
+    transition: color 0.15s ease-out;
 `
 
 const CardWrapper = styled(Link)`
@@ -35,14 +36,6 @@ const CardWrapper = styled(Link)`
         width: auto;
         &:hover {
             h2 {
-                animation: highlight 0.1s forwards ease-out;
-            }
-        }
-        @keyframes highlight {
-            from {
-                color: ${props => props.theme.colors.pink};
-            }
-            to {
                 color: ${props => props.theme.colors.red};
             }
         }

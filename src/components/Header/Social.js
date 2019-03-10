@@ -21,17 +21,9 @@ const SocialLink = styled.a`
   text-align: center;
   width: 40px;
   @media screen and (min-width: 1024px) {
-    margin-top: 1rem;
+    transition: color 0.15s ease-out;
     &:hover {
-      animation: lighten ease-out 0.1s forwards;
-    }
-    @keyframes lighten {
-      0% {
-        color: ${props => props.theme.colors.darkblue};
-      }
-      100% {
-        color: ${props => props.theme.colors.lightblue};
-      }
+      color: ${props => props.theme.colors.lightblue};
     }
   }
 `
