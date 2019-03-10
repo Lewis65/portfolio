@@ -55,8 +55,6 @@ const Thumbnail = styled.div`
   width: 100%;
 `
 
-//Add clickable tags, then work on project detail modal
-
 const ProjectCard = (props) => {
 
   return(

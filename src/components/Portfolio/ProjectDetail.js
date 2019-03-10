@@ -6,17 +6,10 @@ import Tags from '../shared/Tags'
 import defaultProjectThumbnail from '../../images/project.jpg'
 
 const Close = styled.div`
-  align-content: center;
-  border: 2px solid white;
-  border-radius: 40px;
   cursor: pointer;
   display: inline-flex;
   float: right;
-  height: 24px;
-  justify-content: center;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  width: 24px;
+  font-size: 110%;
 `
 
 const Wrapper = styled.div`
@@ -96,7 +89,9 @@ const ProjectDetail = (props) => {
       
       <ProjectTitle>
         {props.project.title}
-        <Close onClick={props.handleProjectClose}>X</Close>
+        <Close onClick={props.handleProjectClose}>
+          <i className="fa fa-times-circle"/>
+        </Close>
       </ProjectTitle>
 
       <Wrapper>
