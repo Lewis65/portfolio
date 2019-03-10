@@ -1,44 +1,42 @@
 import styled from 'styled-components'
 import React from 'react'
-import { Link } from 'gatsby'
+import ButtonLink from '../shared/ButtonLink'
 
-const NavLink = styled(Link)`
-  border-bottom: 4px solid ${props => props.theme.colors.pink};
-  color: white;
+const NavLink = styled(ButtonLink)`
+  background-color: ${props => props.cta ? props.theme.colors.pink : "white"};
+  border-radius: 0;
+  color: ${props => props.cta ? "white" : props.theme.colors.darkblue};
   flex-grow: 1;
-  font-size: 100%;
-  font-weight: 600;
-  padding: 0.25rem;
-  text-align: center;
-  text-decoration: none;
-  &:hover {
-      border-bottom: 4px solid ${props => props.theme.colors.red}
-  }
+  margin: 0;
   @media screen and (min-width: 1024px) {
-    font-size: 120%;
+    border-radius: 1rem;
     margin: 0.5rem 0;
-    text-align: left;
+    transition: background-color 0.15s ease-out, color 0.15s ease-out;
+    &:hover {
+      background-color: ${props => props.cta ? props.theme.colors.red : "white"};
+      color: ${props => props.cta ? "white" : props.theme.colors.lightblue};
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    box-shadow: none;
   }
 `
 
 const NavWrapper = styled.nav`
   display: flex;
-  margin-top: 1rem;
   position: relative;
   right: 0;
   width: 100%;
   @media screen and (min-width: 1024px) {
-    background: none;
-    bottom: 5rem;
     flex-direction: column;
-    position: absolute;
+    margin-top: 1rem;
     width: auto;
   }
 `
 
 const Nav = () => (
   <NavWrapper id="nav">
-    <NavLink to='/'>about</NavLink>
+    <NavLink to='/contact' cta>contact me</NavLink>
     <NavLink to='/portfolio'>portfolio</NavLink>
     <NavLink to='/blog'>blog</NavLink>
   </NavWrapper>

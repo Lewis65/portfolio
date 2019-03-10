@@ -6,7 +6,7 @@ import defaultProjectThumbnail from '../../images/project.jpg'
 
 const Card = styled.div`
   background-color: white;
-  border-radius: 2rem;
+  border-radius: 1rem;
   box-shadow: ${props => props.theme.shadow};
   box-sizing: border-box;
   cursor: pointer;

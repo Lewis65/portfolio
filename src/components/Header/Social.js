@@ -2,9 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 const SocialWrapper = styled.div`
-  justify-content: space-between;
+  justify-content: space-around;
   display: flex;
   margin: 0 auto;
+  max-width: 200px;
   width: 100%;
 `
 const SocialLink = styled.a`

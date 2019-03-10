@@ -5,13 +5,13 @@ import AvatarSrc from '../../images/avatar.jpg'
 import BlockWrapper from '../shared/BlockWrapper'
 
 const AvatarImg = styled.img`
-  border-radius: 50%;
-  height: 150px;
-  width: 150px;
+  height: 120px;
+  width: 120px;
   @media screen and (min-width: 1024px) {
+    border-radius: 50%;
     height: 200px;
     width: 200px;
-    margin: 1rem auto;
+    margin-top: 1rem;
   }
 `
 

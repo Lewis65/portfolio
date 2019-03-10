@@ -9,7 +9,6 @@ const Main = styled.div`
   padding: 1rem;
   width: 100%;
   @media screen and (min-width: 1024px) {
-    margin-top: 2rem;
     padding: 4rem;
     width: calc(100%-(4rem+${props => props.theme.headerWidth}));
   }

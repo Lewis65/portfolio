@@ -1,44 +1,35 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Button from '../shared/ButtonLink'
+import { Link } from 'gatsby'
 import Avatar from './Avatar'
 import Nav from './Nav'
 import Social from './Social'
 
-const HeaderTitle = styled.h1`
+const HeaderTitle = styled(Link)`
   color: white;
   font-family: ${props => props.theme.fonts.header};
-  font-size: 300%;
+  font-size: 2rem;
   margin: 0;
   padding: 0;
   text-align: center;
+  text-decoration: none;
   text-shadow: 2px 2px ${props => props.theme.colors.shadow};
   @media screen and (min-width: 1024px) {
+    font-size: 300%;
     margin-bottom: 1rem;
+    transition: color 0.15s ease-out;
+    &:hover {
+      color: ${props => props.theme.colors.pink};
+    }
   }
 `
 
-const HeaderBtnWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 1rem 0;
-  @media screen and (min-width: 1024px) {
-    margin: 1rem auto;
-  }
-`
-
-const HeaderMiddleWrapper = styled.div`
+const HeaderInfo = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  margin: 0 1rem;
-  @media screen and (max-width: 375px) {
-    margin: 0;
-  }
   @media screen and (min-width: 1024px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 `
 
@@ -58,19 +49,24 @@ const HeaderWrapper = styled.header`
   }
 `
 
+const Me = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+`
+
 const Header = () => (
   <HeaderWrapper>
-    <HeaderTitle>
-      Lewis Horwood
-    </HeaderTitle>
-    <HeaderMiddleWrapper>
+    <HeaderInfo>
       <Avatar/>
-      <HeaderBtnWrapper>
+      <Me>
+        <HeaderTitle to='/'>
+          Lewis Horwood
+        </HeaderTitle>
         <Social/>
-        <Button to="/contact#main">Contact me</Button>
-      </HeaderBtnWrapper>
-    </HeaderMiddleWrapper>
-    
+      </Me>    
+    </HeaderInfo>
     <Nav/>
   </HeaderWrapper>
 )

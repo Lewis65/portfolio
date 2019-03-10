@@ -31,7 +31,7 @@ const Wrapper = styled.div`
 
 const Project = styled.div`
   background-color: white;
-  border-radius: 2rem;
+  border-radius: 1rem;
   box-shadow: ${props => props.theme.shadow};
   box-sizing: border-box;
   display: flex;
