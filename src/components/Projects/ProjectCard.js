@@ -21,11 +21,9 @@ const Card = styled.div`
   -ms-user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
-  @media screen and (min-width: 1024px) {
-    &:hover {
-      h3 {
-        background-color: ${props => props.theme.colors.lightblue};
-      }
+  &:hover {
+    h3 {
+      background-color: ${props => props.theme.colors.lightblue};
     }
   }
 `
