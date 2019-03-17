@@ -156,10 +156,15 @@ class Projects extends React.Component {
     )
 
     if(items.length === 0){
-      items = <p>Nothing here :(</p>
+      items = <p>Error retrieving projects :(</p>
     }
 
-    const allTags = Array.from(new Set((projectData.map(project => project.tags)).flat()))
+    let allTags = Array.from(new Set((projectData.map(project => project.tags)).flat()))
+
+    if(this.state.filterByTag !== null){
+      let indexOfFilteredTag = allTags.indexOf(this.state.filterByTag)
+      allTags.splice(indexOfFilteredTag, 1)
+    }
 
     let children;
     if(this.state.displayProject !== null){

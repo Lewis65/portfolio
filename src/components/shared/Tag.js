@@ -11,7 +11,7 @@ const TagLink = styled.a`
   font-weight: 600;
   margin-bottom: 4px;
   margin-right: 6px;
-  padding: ${props => props.padding || props.large ? "4px 12px" : "2px 8px"};
+  padding: ${props => props.padding || props.large ? "4px 7px" : "2px 6px"};
   &:hover {
     background-color: ${props => props.theme.colors.red};
   }
@@ -22,6 +22,17 @@ const TagLink = styled.a`
     font-size: ${props => props.large ? "16px" : "14px"}
   }
 `
+
+const CloseButtonWrapper = styled.span`
+  float: right;
+  margin: 0 -2px 0 6px;
+`
+
+const CloseButton = () => {
+  return <CloseButtonWrapper>
+    <i className="fa fa-times-circle"/>
+  </CloseButtonWrapper>
+}
 
 const Tag = (props) => {
   switch (props.tagType) {
@@ -44,6 +55,7 @@ const Tag = (props) => {
       activeFilter={props.activeFilter}
       inFilters={props.filters}>
         {props.tag}
+        {props.activeFilter === "true" ? <CloseButton/> : null}
       </TagLink>
     default:
       return <TagLink>{props.tag}</TagLink>

@@ -28,7 +28,7 @@ const Tags = (props) => {
         return <Tag large key={key} tag={item} tagType={props.tagType} handleTagClick={props.handleTagClick} filters={props.filters}/>
       })
       if(props.filterByTag && props.filterByTag !== null){
-        tags.unshift(<Tag tag={props.filterByTag + " X"} tagType={props.tagType} handleTagClick={() => props.handleTagClick(null)} activeFilter="true" filters={props.filters}/>)
+        tags.unshift(<Tag tag={props.filterByTag} tagType={props.tagType} handleTagClick={() => props.handleTagClick(null)} activeFilter="true" filters={props.filters}/>)
       }
       break;
     default:
