@@ -6,7 +6,8 @@ Feel free to use this repo for your own portfolio, but please make sure to inclu
 
 ## Todo
 
-- Create /tag/{tag} pages and lists for blog posts
+- Link Tags on Post pages to relevant /tag/foo page
+- Display tags on the bottom of Post Cards on Lists and link those, too
 - Change projects page to use Contentful rather than hardcoded data
 - Create AWS Lambda for email from contact form and call it from secrets.json
 - Refactor Cards from Projects/Blogs into a shared component

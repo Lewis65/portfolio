@@ -8,11 +8,17 @@ import Heading from '../components/shared/Heading'
 import List from '../components/Blog/List'
 
 const BlogPage = (props) => {
+
+  let postsToDisplay = []
+  props.data.allContentfulBlogPost.edges.forEach(edge => {
+    postsToDisplay.push(edge.node)
+  })
+
   return <Layout>
     <SEO title="Blog" keywords={['Lewis Horwood', 'web developer', 'react', 'Seoul', 'Calgary', 'javascript developer', 'programmer', 'software engineer', 'frontend']} />
     <Main>
       <Heading>Blog</Heading>
-      <List posts={props.data.allContentfulBlogPost.edges}/>
+      <List posts={postsToDisplay}/>
     </Main>
   </Layout>
 }
