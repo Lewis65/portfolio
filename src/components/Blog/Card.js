@@ -45,11 +45,9 @@ const CardWrapper = styled(Link)`
     margin-bottom: 1rem;
     text-decoration: none;
     width: 100%;
-    @media screen and (min-width: 1024px){
-        &:hover {
-            h2 {
-                background-color: ${props => props.theme.colors.red};
-            }
+    &:hover {
+        h2 {
+            box-shadow: inset 0 -1rem 1rem -1rem rgba(255,255,255,0.5);
         }
     }
 `
