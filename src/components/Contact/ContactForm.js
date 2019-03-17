@@ -23,16 +23,6 @@ const Field = styled.div`
     resize: none;
     width: 100%;
   }
-  textarea::-webkit-scrollbar{
-    width: 10px;
-  }
-  textarea::-webkit-scrollbar-thumb {
-    background-color: ${props => props.theme.colors.highlight};
-    border-radius: 5px;
-  }
-  textarea::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
 `
 
 const Form = styled.form`
