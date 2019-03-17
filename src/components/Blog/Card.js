@@ -1,9 +1,19 @@
 import styled from 'styled-components'
 import React from 'react'
 import { Link } from 'gatsby';
+import moment from 'moment'
+
+const CardDate = styled.div`
+    color: white;
+    margin: 1rem 2rem 0.5rem;
+    text-align: right;
+    text-shadow: 2px 2px 4px black;
+`
 
 const CardDescription = styled.div`
     color: white;
+    margin: 0.5rem 2rem 1rem;
+    text-shadow: 2px 2px 4px black;
 `
 
 const CardInfo = styled.div`
@@ -12,10 +22,14 @@ const CardInfo = styled.div`
 `
 
 const CardTitle = styled.h2`
-    color: ${props => props.theme.colors.lightblue};
-    margin: 0 auto 1rem 0;
-    text-shadow: 2px 2px 0 ${props => props.theme.colors.shadow};
+    background-color: ${props => props.theme.colors.pink};
+    box-sizing: border-box;
+    color: white;
+    margin: 0;
+    padding: 0.5rem 2rem;
+    text-shadow: 3px 3px 4px ${props => props.theme.colors.shadow};
     transition: color 0.15s ease-out;
+    width: 100%;
 `
 
 const CardWrapper = styled(Link)`
@@ -29,13 +43,12 @@ const CardWrapper = styled(Link)`
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
-    padding: 2rem;
     text-decoration: none;
     width: 100%;
     @media screen and (min-width: 1024px){
         &:hover {
             h2 {
-                color: ${props => props.theme.colors.pink};
+                background-color: ${props => props.theme.colors.red};
             }
         }
     }
@@ -45,6 +58,9 @@ const Card = (props) => {
     console.log(props.post)
     return <CardWrapper to={`/blog/${props.post.slug}`} featuredImage={props.post.featuredImage}>
         <CardInfo>
+        <CardDate>
+                {moment(props.post.createdAt).fromNow()}
+            </CardDate>
             <CardTitle>
                 {props.post.title}
             </CardTitle>
