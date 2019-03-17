@@ -53,7 +53,6 @@ const CardWrapper = styled(Link)`
 `
 
 const Card = (props) => {
-    console.log(props.post)
     return <CardWrapper to={`/blog/${props.post.slug}`} featuredImage={props.post.featuredImage}>
         <CardInfo>
         <CardDate>
