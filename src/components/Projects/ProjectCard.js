@@ -15,16 +15,16 @@ const Card = styled.div`
   font-size: 90%;
   overflow-x: hidden;
   margin-bottom: 1rem;
+  opacity: 0.9;
   padding: 0;
+  transition: opacity 0.15s ease-out;
   user-select: none;
   width: 100%;
   -ms-user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
   &:hover {
-    h3 {
-      background-color: ${props => props.theme.colors.lightblue};
-    }
+    opacity: 1;
   }
 `
 

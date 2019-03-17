@@ -40,15 +40,19 @@ const CardWrapper = styled(Link)`
     border-radius: 1rem;
     box-shadow: ${props => props.theme.smallShadow};
     box-sizing: border-box;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
+    opacity: 0.9;
     text-decoration: none;
+    transition: opacity 0.15s ease-out;
     width: 100%;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
     &:hover {
-        h2 {
-            box-shadow: inset 0 -1rem 1rem -1rem rgba(255,255,255,0.5);
-        }
+        opacity: 1;
     }
 `
 
