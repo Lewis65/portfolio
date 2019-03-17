@@ -12,7 +12,7 @@ const Card = styled.div`
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  font-size: 75%;
+  font-size: 90%;
   overflow-x: hidden;
   margin-bottom: 1rem;
   padding: 0;
@@ -22,7 +22,6 @@ const Card = styled.div`
   -moz-user-select: none;
   -webkit-user-select: none;
   @media screen and (min-width: 1024px) {
-    font-size: 90%;
     &:hover {
       h3 {
         background-color: ${props => props.theme.colors.lightblue};
@@ -56,20 +55,17 @@ const Thumbnail = styled.div`
 `
 
 const ProjectCard = (props) => {
-
-  return(
-    <Card>
-      <ProjectTitle onClick={()=>props.handleCardClick(props.projectId)}>
-        {props.project.title}
-      </ProjectTitle>
-      <Thumbnail src={props.project.img || defaultProjectThumbnail} onClick={()=>props.handleCardClick(props.projectId)}>
-        <Tags tags={props.project.tags} tagType="projectCard" handleTagClick={props.handleTagClick}></Tags>
-      </Thumbnail>
-      <ProjectBrief>
-        {props.project.brief}
-      </ProjectBrief>
-    </Card>
-  )
+  return <Card>
+    <ProjectTitle onClick={()=>props.handleCardClick(props.projectId)}>
+      {props.project.title}
+    </ProjectTitle>
+    <Thumbnail src={props.project.img || defaultProjectThumbnail} onClick={()=>props.handleCardClick(props.projectId)}>
+      <Tags tags={props.project.tags} tagType="projectCard"></Tags>
+    </Thumbnail>
+    <ProjectBrief>
+      {props.project.brief}
+    </ProjectBrief>
+  </Card>
 }
 
 export default ProjectCard

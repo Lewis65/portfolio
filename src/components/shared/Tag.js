@@ -12,14 +12,17 @@ const TagLink = styled.a`
   margin-bottom: 4px;
   margin-right: 6px;
   padding: ${props => props.padding || props.large ? "4px 7px" : "2px 6px"};
-  &:hover {
-    background-color: ${props => props.theme.colors.red};
-  }
   &:last-child {
     margin-right: 0;
   }
   @media screen and (min-width: 1024px){
     font-size: ${props => props.large ? "16px" : "14px"}
+  }
+`
+
+const TagLinkWithHover = styled(TagLink)`
+  &:hover {
+    background-color: ${props => props.theme.colors.red};
   }
 `
 
@@ -43,20 +46,18 @@ const Tag = (props) => {
     case 'projectCard':
     return <TagLink
     tag={props.tag}
-    onClick={()=>props.handleTagClick(props.tag)}
-    activeFilter={props.activeFilter}
     inFilters={props.filters}>
         {props.tag}
       </TagLink>
     case 'projectList':
-      return <TagLink large
+      return <TagLinkWithHover large
       tag={props.tag}
       onClick={()=>props.handleTagClick(props.tag)}
       activeFilter={props.activeFilter}
       inFilters={props.filters}>
         {props.tag}
         {props.activeFilter === "true" ? <CloseButton/> : null}
-      </TagLink>
+      </TagLinkWithHover>
     default:
       return <TagLink>{props.tag}</TagLink>
   }
