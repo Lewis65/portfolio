@@ -159,7 +159,7 @@ class Projects extends React.Component {
       items = <p>Error retrieving projects :(</p>
     }
 
-    let allTags = Array.from(new Set((projectData.map(project => project.tags)).flat()))
+    let allTags = Array.from(new Set((projectData.map(project => project.tags)).flat())).sort()
 
     if(this.state.filterByTag !== null){
       let indexOfFilteredTag = allTags.indexOf(this.state.filterByTag)
