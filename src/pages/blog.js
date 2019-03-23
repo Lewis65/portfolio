@@ -34,7 +34,7 @@ export const pageQuery = graphql`
           slug
           featuredImage {
             fluid {
-              src
+              ...GatsbyContentfulFluid
             }
           }
           description {
