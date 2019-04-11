@@ -4,8 +4,7 @@ import React from 'react'
 import Heading from '../shared/Heading'
 
 const Header = styled.div`
-    background-image: ${props => props.featuredImage ? `url(${props.featuredImage.fluid.src})` : "none"};
-    background-color: ${props => props.theme.colors.darkblue};
+    background-image: ${props => props.featuredImage ? `url(${props.featuredImage.fluid.src})` : `linear-gradient(130deg, ${props.theme.colors.darkblue}, ${props.theme.colors.pink})`};
     background-size: cover;
     color: white;
     padding: 2rem 1rem;
