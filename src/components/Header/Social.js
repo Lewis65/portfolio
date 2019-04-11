@@ -31,13 +31,13 @@ const SocialLink = styled.a`
 
 const Social = () => (
   <SocialWrapper>
-      <SocialLink href="#">
+      <SocialLink target="_blank" href="https://github.com/Lewis65">
         <i className="fab fa-github"></i>
       </SocialLink>
-      <SocialLink href="#">
+      <SocialLink target="_blank" href="https://www.linkedin.com/in/lewishorwood/">
         <i className="fab fa-linkedin"></i>
       </SocialLink>
-      <SocialLink href="#">
+      <SocialLink target="_blank" href="https://www.freecodecamp.org/lewis65">
         <i className="fab fa-free-code-camp"></i>
       </SocialLink>
   </SocialWrapper>
