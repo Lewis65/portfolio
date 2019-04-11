@@ -50,7 +50,7 @@ const CardTitle = styled.h2`
     box-sizing: border-box;
     color: white;
     margin: 0;
-    padding: 1rem 2rem 0.5rem;
+    padding: 1rem 1rem 0.5rem;
     text-shadow: 3px 3px 6px ${props => props.theme.colors.shadow};
     transition: color 0.15s ease-out, text-shadow 0.15s ease-out;
     width: 100%;

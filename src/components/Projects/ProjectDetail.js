@@ -59,14 +59,14 @@ const ProjectDetails = styled.div`
   }
 `
 
-const ProjectTitle = styled.h3`
-  background-color: ${props => props.theme.colors.darkblue};
+const ProjectTitle = styled.h2`
+  background-image: linear-gradient(130deg, ${props => props.theme.colors.darkblue}, ${props => props.theme.colors.pink});
   box-sizing: border-box;
   color: white;
   display: block;
-  font-size: 125%;
   margin: 0;
   padding: 1rem;
+  text-shadow: 3px 3px 6px ${props => props.theme.colors.pink};
 `
 
 const Thumbnail = styled.img`
@@ -79,8 +79,6 @@ const Thumbnail = styled.img`
     width: 50%;
   }
 `
-
-//Add clickable tags, then work on project detail modal
 
 const ProjectDetail = (props) => {
 

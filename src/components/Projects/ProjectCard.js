@@ -25,6 +25,9 @@ const Card = styled.div`
   -webkit-user-select: none;
   &:hover {
     opacity: 1;
+    h2 {
+      text-shadow: 3px 3px 6px ${props => props.theme.colors.pink};
+    }
   }
 `
 
@@ -33,16 +36,14 @@ const ProjectBrief = styled.div`
   padding: 1rem;
 `
 
-const ProjectTitle = styled.h3`
-  background-color: ${props => props.theme.colors.darkblue};
+const ProjectTitle = styled.h2`
+  background-image: linear-gradient(130deg, ${props => props.theme.colors.darkblue}, ${props => props.theme.colors.pink});
   color: white;
   display: block;
-  font-size: 125%;
   margin: 0;
   padding: 1rem;
-  @media screen and (min-width: 1024px) {
-    transition: background-color 0.15s ease-out;
-  }
+  text-shadow: 3px 3px 6px ${props => props.theme.colors.shadow};
+  transition: color 0.15s ease-out, text-shadow 0.15s ease-out;
 `
 
 const Thumbnail = styled.div`

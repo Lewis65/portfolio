@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import React from 'react'
 
 const TagLink = styled.a`
-  background-color: ${props => props.activeFilter==="true" ? props.theme.colors.red : props.theme.colors.pink};
+  background-color: ${props => props.activeFilter==="true" ? props.theme.colors.pink : props.theme.colors.lightblue};
   border-radius: 20px;
   color: white;
   cursor: pointer;
@@ -16,13 +16,13 @@ const TagLink = styled.a`
     margin-right: 0;
   }
   @media screen and (min-width: 1024px){
-    font-size: ${props => props.large ? "16px" : "14px"}
+    font-size: ${props => props.large ? "16px" : "13px"}
   }
 `
 
 const TagLinkWithHover = styled(TagLink)`
   &:hover {
-    background-color: ${props => props.theme.colors.red};
+    background-color: ${props => props.theme.colors.pink};
   }
 `
 
