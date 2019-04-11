@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 import React from 'react'
 
-const TagLink = styled.a`
+import Link from './Link'
+
+const TagLink = styled(Link)`
   background-color: ${props => props.activeFilter==="true" ? props.theme.colors.pink : props.theme.colors.lightblue};
   border-radius: 20px;
   color: white;
@@ -12,6 +14,7 @@ const TagLink = styled.a`
   margin-bottom: 4px;
   margin-right: 6px;
   padding: ${props => props.padding || props.large ? "4px 7px" : "2px 6px"};
+  text-decoration: none;
   &:last-child {
     margin-right: 0;
   }
@@ -40,13 +43,13 @@ const CloseButton = () => {
 const Tag = (props) => {
   switch (props.tagType) {
     case 'blog':
-      return <TagLink large>
+      return <TagLinkWithHover large to={`/blog/tags/${props.tag}`}>
         {props.tag}
-      </TagLink>
+      </TagLinkWithHover>
     case 'projectCard':
     return <TagLink
-    tag={props.tag}
-    inFilters={props.filters}>
+      tag={props.tag}
+      inFilters={props.filters}>
         {props.tag}
       </TagLink>
     case 'projectList':
