@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -6,14 +7,48 @@ import Main from '../components/shared/MainPage'
 import Heading from '../components/shared/Heading'
 import Projects from '../components/Projects/Projects';
 
-const PortfolioPage = () => (
+const PortfolioPage = (props) => {
+
+  let projectsToDisplay = []
+  props.data.allContentfulProject.edges.forEach(edge => {
+    projectsToDisplay.push(edge.node)
+  })
+
+  return(
   <Layout>
     <SEO title="Projects" keywords={['Lewis Horwood', 'web developer', 'react', 'Seoul', 'Calgary', 'javascript developer', 'programmer', 'software engineer', 'frontend']} />
     <Main>
       <Heading>Projects</Heading>
-      <Projects/>
+      <Projects projects={projectsToDisplay}/>
     </Main>
   </Layout>
-)
+  )
+}
 
 export default PortfolioPage
+
+export const pageQuery = graphql`
+  {
+    allContentfulProject {
+      edges {
+        node {
+          title
+          date
+          description {
+            description
+          }
+          posts {
+            slug
+            title
+            description {
+              description
+            }
+          }
+          codepen
+          github
+          demo
+        }
+      }
+    }
+  }
+`
