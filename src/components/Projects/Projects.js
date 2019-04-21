@@ -146,17 +146,26 @@ class Projects extends React.Component {
   
   render() {
 
-    let items = projectData.map((project, index) => {
-        if (this.state.filterByTag === null || project.tags.includes(this.state.filterByTag)){
-          return(
-           <ProjectCard project={project} key={index} projectId={index.toString()} handleCardClick={this.handleCardClick} handleTagClick={this.handleTagClick} handleProjectClose={this.handleProjectClose}/>
-          )
-        }
-      }
-    )
+    let items
 
-    if(items.length === 0){
-      items = <p>Error retrieving projects :(</p>
+    if(this.props.projects && this.props.projects.length){
+      items = projectData.map((project, index) => {
+          if (this.state.filterByTag === null || project.tags.includes(this.state.filterByTag)){
+            return(
+              <ProjectCard
+                project={project}
+                key={index}
+                projectId={index.toString()}
+                handleCardClick={this.handleCardClick}
+                handleTagClick={this.handleTagClick}
+                handleProjectClose={this.handleProjectClose}
+              />
+            )
+          }
+        }
+      )
+    } else {
+      items = [<span>Sorry, there was a problem retrieving my projects from Contentful.</span>]
     }
 
     let allTags = Array.from(new Set((projectData.map(project => project.tags)).flat())).sort()
