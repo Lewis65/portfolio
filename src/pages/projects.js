@@ -34,14 +34,22 @@ export const pageQuery = graphql`
         node {
           title
           date
+          tags
+          brief {
+            brief
+          }
           description {
-            description
+            childMarkdownRemark {
+              html
+            }
           }
           posts {
             slug
             title
             description {
-              description
+              childMarkdownRemark {
+                html
+              }
             }
           }
           codepen

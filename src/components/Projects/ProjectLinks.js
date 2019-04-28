@@ -58,7 +58,7 @@ const ProjectLinks = (props) => {
     let links = props.links.map(link => 
       <ProjectLink to={link.to}>
         <i className={icons[link.type]||icons.default}/>
-        <span>{link.text}</span>
+        <span>{link.type}</span>
       </ProjectLink>
     )
     return (<LinkGroup>{links}</LinkGroup>)

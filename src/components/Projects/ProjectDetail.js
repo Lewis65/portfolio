@@ -47,7 +47,11 @@ const ProjectBrief = styled.p`
 `
 
 const ProjectDescription = styled.div`
-  
+  a {
+    border-bottom: 2px solid ${props => props.theme.colors.pink};
+    color: ${props => props.theme.colors.pink};
+    text-decoration: none;
+  }
 `
 
 const ProjectDetails = styled.div`
@@ -82,6 +86,28 @@ const Thumbnail = styled.img`
 
 const ProjectDetail = (props) => {
 
+  console.log(props.project)
+
+  //Used to set inner html in project description and render markdown correctly
+  const description = {
+    __html: props.project.description.childMarkdownRemark.html
+  }
+
+  //Array of all links related to a project
+  let projectLinks = []
+  function pushLinks(type) {
+    if(props.project[type]){
+      projectLinks.push({
+        to: props.project[type],
+        type: type
+      })
+    }
+  }
+  pushLinks("blog")
+  pushLinks("codepen")
+  pushLinks("demo")
+  pushLinks("github")
+
   return(
     <Project>
       
@@ -99,10 +125,9 @@ const ProjectDetail = (props) => {
           <ProjectBrief>
             {props.project.brief}
           </ProjectBrief>
-          <ProjectDescription>
-            {props.project.description}
+          <ProjectDescription dangerouslySetInnerHTML={description}>
           </ProjectDescription>
-          <ProjectLinks links={props.project.links}/>
+          <ProjectLinks links={projectLinks}/>
         </ProjectDetails>
       </Wrapper>
     </Project>

@@ -6,11 +6,11 @@ Feel free to use this repo for your own portfolio, but please make sure to inclu
 
 ## Todo
 
-- Link Tags on Post pages to relevant /tag/foo page
+- Add briefs to Contentful projects
+- Capture images for projects
+- Change external links to HTML on Contentful markdown
 - Display tags on the bottom of Post Cards on Lists and link those, too
-- Change projects page to use Contentful rather than hardcoded data
 - Create AWS Lambda for email from contact form and call it from secrets.json
-- Refactor Cards from Projects/Blogs into a shared component
 
 ## Secrets
 

@@ -133,7 +133,7 @@ class Projects extends React.Component {
   }
 
   handleCardClick = (index) => {
-    this.setState({displayProject: projectData[index]})
+    this.setState({displayProject: this.props.projects[index]})
   }
 
   handleProjectClose = () => {
@@ -146,10 +146,11 @@ class Projects extends React.Component {
   
   render() {
 
-    let items
+    let items = []
+    let errorRetrievingProjects = false
 
     if(this.props.projects && this.props.projects.length){
-      items = projectData.map((project, index) => {
+      items = this.props.projects.map((project, index) => {
           if (this.state.filterByTag === null || project.tags.includes(this.state.filterByTag)){
             return(
               <ProjectCard
@@ -165,10 +166,16 @@ class Projects extends React.Component {
         }
       )
     } else {
+      errorRetrievingProjects = true
       items = [<span>Sorry, there was a problem retrieving my projects from Contentful.</span>]
     }
 
-    let allTags = Array.from(new Set((projectData.map(project => project.tags)).flat())).sort()
+    let allTags = []
+
+    if(!errorRetrievingProjects){
+      //allTags = Array.from(new Set((projectData.map(project => project.tags)).flat())).sort()
+      allTags = ['javascript', 'gatsby']
+    }
 
     if(this.state.filterByTag !== null){
       let indexOfFilteredTag = allTags.indexOf(this.state.filterByTag)
