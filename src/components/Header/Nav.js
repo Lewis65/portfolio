@@ -36,7 +36,7 @@ const NavWrapper = styled.nav`
 
 const Nav = () => (
   <NavWrapper id="nav">
-    <NavLink to='/contact' cta>contact me</NavLink>
+    <NavLink to='/contact' cta='true'>contact me</NavLink>
     <NavLink to='/projects'>projects</NavLink>
     <NavLink to='/blog'>blog</NavLink>
   </NavWrapper>
