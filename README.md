@@ -10,6 +10,7 @@ Feel free to use this repo for your own portfolio, but please make sure to inclu
 - Change external links to HTML on Contentful markdown
 - Display tags on the bottom of Post Cards on Lists and link those, too
 - Create AWS Lambda for email from contact form and call it from secrets.json
+- Add skills/technologies section to homepage
 
 ## Secrets
 
