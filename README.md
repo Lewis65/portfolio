@@ -6,7 +6,6 @@ Feel free to use this repo for your own portfolio, but please make sure to inclu
 
 ## Todo
 
-- Add briefs to Contentful projects
 - Capture images for projects
 - Change external links to HTML on Contentful markdown
 - Display tags on the bottom of Post Cards on Lists and link those, too

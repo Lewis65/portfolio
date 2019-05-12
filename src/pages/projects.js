@@ -35,9 +35,7 @@ export const pageQuery = graphql`
           title
           date
           tags
-          brief {
-            brief
-          }
+          brief
           description {
             childMarkdownRemark {
               html
