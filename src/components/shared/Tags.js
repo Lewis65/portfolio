@@ -18,6 +18,10 @@ const Tags = (props) => {
         return <Tag large key={key} tag={item} tagType={props.tagType}/>
       })
       break;
+    case 'blogCard':
+      tags = props.tags.map((item, key) => {
+        return <Tag key={key} tag={item} tagType={props.tagType}/>
+      })
     case 'projectCard':
       tags = props.tags.map((item, key) => {
         return <Tag key={key} tag={item} tagType={props.tagType} handleTagClick={props.handleTagClick} filters={props.filters}/>

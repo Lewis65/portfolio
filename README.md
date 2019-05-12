@@ -6,6 +6,7 @@ Feel free to use this repo for your own portfolio, but please make sure to inclu
 
 ## Todo
 
+- Fix styling of Post Cards with featured imgs
 - Capture images for projects
 - Change external links to HTML on Contentful markdown
 - Display tags on the bottom of Post Cards on Lists and link those, too

@@ -4,22 +4,23 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image'
 import moment from 'moment'
 
+import Tags from '../shared/Tags'
+
 const CardDate = styled.div`
     box-sizing: border-box;
     color: ${props => props.theme.colors.pink};
-    padding: 1rem 2rem 0;
     text-align: right;
     width: 100%;
 `
 
 const CardDescription = styled.div`
-    box-sizing: border-box;
-    padding: 1rem 2rem;
     transition: opacity 0.15s ease-out, padding 0.15s ease-out;
 `
 
 const CardImage = styled(Img)`
     margin: 0;
+    min-height: 100%;
+    position: absolute;
     width: 100%;
     z-index: 1;
 `
@@ -42,6 +43,17 @@ const CardMeta = styled.div`
         .description {
             color: ${props => props.theme.colors.body};
         }
+    }
+`
+
+const CardMetaWrapper = styled.div`
+    overflow: hidden;
+`
+
+const CardTable = styled.table`
+    margin: 0.5rem 0;
+    td {
+        padding: 0.5rem 1rem;
     }
 `
 
@@ -84,25 +96,44 @@ const CardWrapper = styled(Link)`
 
 const Card = (props) => {
     return <CardWrapper to={`/blog/${props.post.slug}`}>
-            <CardTitle>
-                {props.post.title}
-            </CardTitle>
-            <CardInfo>
-                {
-                    props.post.featuredImage ? 
-                    <CardImage fluid={props.post.featuredImage.fluid}/> : 
-                    null
-                }
+
+        <CardTitle>
+            {props.post.title}
+        </CardTitle>
+
+        <CardInfo>
+            {
+                props.post.featuredImage ? 
+                <CardImage fluid={props.post.featuredImage.fluid}/> : 
+                null
+            }
+            <CardMetaWrapper>
                 <CardMeta className={props.post.featuredImage ? "img" : "noimg"}>
-                    <CardDate>
-                        {moment(props.post.createdAt).fromNow()}
-                    </CardDate>
-                    <CardDescription className="description">
-                        {props.post.description.description}
-                    </CardDescription>
+                    <CardTable>
+                        <tr>
+                            <td>
+                                <CardDate>
+                                    {moment(props.post.createdAt).fromNow()}
+                                </CardDate>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <CardDescription className="description">
+                                    {props.post.description.description}
+                                </CardDescription>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Tags tags={props.post.tags.sort()} tagType="blogCard"/>
+                            </td>
+                        </tr>
+                    </CardTable>
                 </CardMeta>
-            </CardInfo>
-        
+            </CardMetaWrapper>
+        </CardInfo>
+
     </CardWrapper>
 }
 

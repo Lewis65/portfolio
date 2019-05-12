@@ -32,6 +32,7 @@ export const pageQuery = graphql`
         node {
           title
           slug
+          tags
           featuredImage {
             fluid {
               ...GatsbyContentfulFluid
