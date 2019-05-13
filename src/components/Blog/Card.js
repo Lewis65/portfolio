@@ -14,45 +14,14 @@ const CardDate = styled.div`
 `
 
 const CardDescription = styled.div`
+    color: ${props => props.theme.colors.body};
     transition: opacity 0.15s ease-out, padding 0.15s ease-out;
 `
 
-const CardImage = styled(Img)`
-    margin: 0;
-    min-height: 100%;
-    position: absolute;
-    width: 100%;
-    z-index: 1;
-`
-
 const CardInfo = styled.div`
-    position: relative;
-`
-
-const CardMeta = styled.div`
-    &.img {
-        position: absolute;
-        text-shadow: 1px 1px 2px black;
-        top: 0;
-        z-index: 2;
-        .description {
-            color: white;
-        }
-    }
-    &.noimg {
-        .description {
-            color: ${props => props.theme.colors.body};
-        }
-    }
-`
-
-const CardMetaWrapper = styled.div`
-    overflow: hidden;
-`
-
-const CardTable = styled.table`
-    margin: 0.5rem 0;
-    td {
+    margin-top: 0.5rem;
+    div {
+        margin: 0;
         padding: 0.5rem 1rem;
     }
 `
@@ -102,36 +71,13 @@ const Card = (props) => {
         </CardTitle>
 
         <CardInfo>
-            {
-                props.post.featuredImage ? 
-                <CardImage fluid={props.post.featuredImage.fluid}/> : 
-                null
-            }
-            <CardMetaWrapper>
-                <CardMeta className={props.post.featuredImage ? "img" : "noimg"}>
-                    <CardTable>
-                        <tr>
-                            <td>
-                                <CardDate>
-                                    {moment(props.post.createdAt).fromNow()}
-                                </CardDate>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <CardDescription className="description">
-                                    {props.post.description.description}
-                                </CardDescription>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <Tags tags={props.post.tags.sort()} tagType="blogCard"/>
-                            </td>
-                        </tr>
-                    </CardTable>
-                </CardMeta>
-            </CardMetaWrapper>
+                <CardDate>
+                    {moment(props.post.createdAt).fromNow()}
+                </CardDate>
+                <CardDescription className="description">
+                    {props.post.description.description}
+                </CardDescription>
+                <Tags tags={props.post.tags.sort()} tagType="blogCard"/>
         </CardInfo>
 
     </CardWrapper>
