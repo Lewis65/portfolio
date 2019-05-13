@@ -46,8 +46,12 @@ const Tag = (props) => {
       return <TagLinkWithHover large to={`/blog/tags/${props.tag}`}>
         {props.tag}
       </TagLinkWithHover>
+    case 'blogCard':
+      return <TagLinkWithHover to={`/blog/tags/${props.tag}`}>
+        {props.tag}
+      </TagLinkWithHover>
     case 'projectCard':
-    return <TagLink
+      return <TagLink
       tag={props.tag}
       inFilters={props.filters}>
         {props.tag}

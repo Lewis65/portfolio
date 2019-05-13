@@ -20,36 +20,45 @@ const CardDescription = styled.div`
 
 const CardInfo = styled.div`
     margin-top: 0.5rem;
+    padding: 0 1rem;
     div {
-        margin: 0;
-        padding: 0.5rem 1rem;
+        margin: 0.5rem 0;
     }
 `
 
-const CardTitle = styled.h2`
+const CardTitle = styled(Link)`
     background-image: linear-gradient(130deg, ${props => props.theme.colors.darkblue}, ${props => props.theme.colors.pink});
     box-sizing: border-box;
     color: white;
+    cursor: pointer;
     margin: 0;
-    padding: 1rem 1rem 0.5rem;
+    padding: 1rem;
+    text-decoration: none;
     text-shadow: 3px 3px 6px ${props => props.theme.colors.shadow};
     transition: color 0.15s ease-out, text-shadow 0.15s ease-out;
     width: 100%;
+    h3 {
+        margin: 0;
+        padding: 0;
+    }
+    &:hover {
+        h3 {
+            text-shadow: 3px 3px 6px ${props => props.theme.colors.pink};
+        }
+    }
 `
 
-const CardWrapper = styled(Link)`
+const CardWrapper = styled.div`
     background-color: white;
     border-radius: 1rem;
     box-shadow: ${props => props.theme.smallShadow};
     box-sizing: border-box;
-    cursor: pointer;
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
     opacity: 0.9;
     overflow: hidden;
     position: relative;
-    text-decoration: none;
     transition: opacity 0.15s ease-out;
     width: 100%;
     -ms-user-select: none;
@@ -57,17 +66,14 @@ const CardWrapper = styled(Link)`
     -webkit-user-select: none;
     &:hover {
         opacity: 1;
-        h2 {
-            text-shadow: 3px 3px 6px ${props => props.theme.colors.pink};
-        }
     }
 `
 
 const Card = (props) => {
-    return <CardWrapper to={`/blog/${props.post.slug}`}>
+    return <CardWrapper>
 
-        <CardTitle>
-            {props.post.title}
+        <CardTitle to={`/blog/${props.post.slug}`}>
+            <h3>{props.post.title}</h3>
         </CardTitle>
 
         <CardInfo>
