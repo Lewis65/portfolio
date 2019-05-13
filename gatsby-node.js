@@ -46,7 +46,7 @@ exports.createPages = ({graphql, actions}) => {
                 edge.node.tags.forEach(tag => {
                     allTagsInBlogPosts.push(tag)
                     if(mapOfTagsAndTheirPosts.hasOwnProperty(tag)){
-                        mapOfTagsAndTheirPosts.push(edge.node)
+                        mapOfTagsAndTheirPosts[tag].push(edge.node)
                     } else {
                         mapOfTagsAndTheirPosts[tag] = [edge.node]
                     }

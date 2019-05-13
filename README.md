@@ -6,7 +6,6 @@ Feel free to use this repo for your own portfolio, but please make sure to inclu
 
 ## Todo
 
-- Make Tags on Post Cards clickable and link to list of thusly-tagged posts
 - Capture images for projects
 - Change external links to HTML on Contentful markdown
 - Create AWS Lambda for email from contact form and call it from secrets.json
