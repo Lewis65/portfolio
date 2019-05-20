@@ -17,7 +17,9 @@ const Icon = styled.div`
     justify-content: baseline;
     margin: 2rem 0;
     i {
+        color: white;
         font-size: 5em;
+        text-shadow: 4px 4px 1px ${props => props.theme.colors.lightblue};
     }
     span {
         margin-top: 0.5rem;
