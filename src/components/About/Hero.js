@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Image from 'gatsby-image'
 import HeroImgSrc from '../../images/hero1.jpg'
 
 const HeroImage = styled.div`
