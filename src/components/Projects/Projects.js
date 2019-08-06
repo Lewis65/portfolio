@@ -45,8 +45,9 @@ class Projects extends React.Component {
                 handleProjectClose={this.handleProjectClose}
               />
             )
+          } else {
+            return null
           }
-          return
         }
       )
     } else {
