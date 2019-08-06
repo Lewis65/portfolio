@@ -46,6 +46,7 @@ class Projects extends React.Component {
               />
             )
           }
+          return
         }
       )
     } else {
