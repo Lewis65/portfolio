@@ -47,18 +47,24 @@ const ProjectTitle = styled.h2`
 `
 
 const Thumbnail = styled.div`
-  background: url(${props => props.src}) center / cover;
+  background: url(${props => props.src});
   max-height: 300px;
   min-height: 200px;
   width: 100%;
 `
 
 const ProjectCard = (props) => {
+
+  let image = defaultProjectThumbnail
+  if(props.project.image && props.project.image.fluid){
+    image = props.project.image.fluid.src
+  }
+
   return <Card>
     <ProjectTitle onClick={()=>props.handleCardClick(props.projectId)}>
       {props.project.title}
     </ProjectTitle>
-    <Thumbnail src={props.project.img || defaultProjectThumbnail} onClick={()=>props.handleCardClick(props.projectId)}>
+    <Thumbnail src={image} onClick={()=>props.handleCardClick(props.projectId)}>
       <Tags tags={props.project.tags.sort()} tagType="projectCard"></Tags>
     </Thumbnail>
     <ProjectBrief>

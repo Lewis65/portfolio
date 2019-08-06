@@ -34,6 +34,7 @@ class Projects extends React.Component {
 
     if(this.props.projects && this.props.projects.length){
       items = this.props.projects.map((project, index) => {
+        console.log(project)
           if (this.state.filterByTag === null || project.tags.includes(this.state.filterByTag)){
             return(
               <ProjectCard

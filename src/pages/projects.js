@@ -41,6 +41,12 @@ export const pageQuery = graphql`
               html
             }
           }
+          image {
+            description
+            fluid {
+              src
+            }
+          }
           posts {
             slug
             title
