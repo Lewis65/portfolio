@@ -59,8 +59,7 @@ class Projects extends React.Component {
     let allTags = []
 
     if(!errorRetrievingProjects){
-      //allTags = Array.from(new Set((projectData.map(project => project.tags)).flat())).sort()
-      allTags = ['javascript', 'gatsby']
+      allTags = Array.from(new Set((this.props.projects.map(project => project.tags)).flat())).sort()
     }
 
     if(this.state.filterByTag !== null){
@@ -74,6 +73,7 @@ class Projects extends React.Component {
     } else {
       children = (
         <React.Fragment>
+          <h2>Tags:</h2>
           <Tags tags={allTags} tagType="projectList" handleTagClick={this.handleTagClick} filterByTag={this.state.filterByTag}/>
           <CardTable>{items}</CardTable>
         </React.Fragment>
