@@ -74,7 +74,7 @@ const ProjectTitle = styled.h2`
 `
 
 const Thumbnail = styled.img`
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -108,6 +108,11 @@ const ProjectDetail = (props) => {
   pushLinks("demo")
   pushLinks("github")
 
+  let image = defaultProjectThumbnail
+  if(props.project.image && props.project.image.fluid){
+    image = props.project.image.fluid.src
+  }
+
   return(
     <Project>
       
@@ -119,7 +124,7 @@ const ProjectDetail = (props) => {
       </ProjectTitle>
 
       <Wrapper>
-        <Thumbnail src={props.project.img || defaultProjectThumbnail}/>
+        <Thumbnail src={image}/>
         <ProjectDetails>
           <Tags tags={props.project.tags} tagType="projectList" handleTagClick={props.handleTagClick} padding="0" noMargin="true"/>
           <ProjectBrief>
