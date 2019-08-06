@@ -48,6 +48,9 @@ const ProjectTitle = styled.h2`
 
 const Thumbnail = styled.div`
   background: url(${props => props.src});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
   max-height: 300px;
   min-height: 200px;
   width: 100%;
