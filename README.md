@@ -6,10 +6,11 @@ Feel free to use this repo for your own portfolio, but please make sure to inclu
 
 ## Todo
 
-- Capture images for projects
 - Change external links to HTML on Contentful markdown
 - Create AWS Lambda for email from contact form and call it from secrets.json
-- Add skills/technologies section to homepage
+- Have Project Tags lie on top of wrappers so they are clickable as filters
+- Correct gathering of tags on all projects
+- Restyle
 
 ## Secrets
 
