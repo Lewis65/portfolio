@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 
 import Heading from '../shared/Heading'
 import Button from '../shared/ButtonLink'
