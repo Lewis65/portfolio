@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "gatsby-portfolio",
+  "description": "Gatsby Portfolio",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Lewis Horwood",
   "dependencies": {
     "dotenv": "^6.2.0",
     "gatsby": "^2.13.51",
@@ -25,7 +25,8 @@
     "styled-components": "^4.3.2"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "portfolio"
   ],
   "license": "MIT",
   "scripts": {
@@ -40,6 +41,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/Lewis65/portfolio"
   }
 }
