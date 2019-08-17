@@ -1,9 +1,8 @@
 import styled from 'styled-components'
 
 const Section = styled.section`
-    border-bottom: 2px solid white;
     color: white;
-    padding: 2rem 0;
+    padding: 1rem 0;
     text-align: center;
     width: 100%;
     h2 {

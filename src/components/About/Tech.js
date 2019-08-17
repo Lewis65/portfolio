@@ -19,7 +19,6 @@ const Icon = styled.div`
     i {
         color: white;
         font-size: 5em;
-        text-shadow: 4px 4px 1px ${props => props.theme.colors.lightblue};
     }
     span {
         margin-top: 0.5rem;
@@ -28,9 +27,8 @@ const Icon = styled.div`
 `
 
 const Tech = () => (
-    <Section className='about-section'>
-        <h2>Tech</h2>
-        <p>I do most of my work with:</p>
+    <Section>
+        <p>Some of the tech I use most:</p>
         <IconGroup>
             <Icon>
                 <i className='fab fa-js'/>
