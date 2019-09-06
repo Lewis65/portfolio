@@ -36,7 +36,7 @@ const Title = styled.h2`
 `
 
 const Thumbnail = styled.div`
-  background: url(${props => props.thumbnail});
+  background: url(${props => props.src});
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -45,26 +45,26 @@ const Thumbnail = styled.div`
   width: 100%;
 `
 
-const Card = (props) => {
+const Body = styled.div`
+    flex-grow: 1;
+    padding: 1rem;
+`
 
-  let thumbnail = null
-  if(props.thumbnail && props.thumbnail.fluid){
-      thumbnail = props.thumbnail.fluid.src
-  }
+const Card = (props) => {
 
   return <Wrapper>
 
     <Title onClick={props.handleCardClick}>
-      {props.project.title}
+      {props.title}
     </Title>
 
-    <Thumbnail src={thumbnail} onClick={props.handleCardClick} />
+    {props.thumbnail && <Thumbnail src={props.thumbnail} onClick={props.handleCardClick} />}
 
-    <Description>
-      {props.project.brief}
-    </Description>
+    <Body>
+      {props.body}
+    </Body>
 
-    <Tags tags={props.project.tags.sort()} tagType={props.tagType} />
+    <Tags tags={props.tags.sort()} tagType={props.tagType} />
 
   </Wrapper>
 }

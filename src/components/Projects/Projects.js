@@ -1,9 +1,10 @@
 import React from 'react'
 
 import CardTable from '../shared/CardTable'
-import ProjectCard from './ProjectCard'
-import ProjectDetail from './ProjectDetail'
+import Card from '../shared/Card'
 import Tags from '../shared/Tags'
+import ProjectDetail from './ProjectDetail'
+import defaultThumbnail from '../../images/project.jpg'
 
 class Projects extends React.Component {
 
@@ -37,8 +38,11 @@ class Projects extends React.Component {
         console.log(project)
           if (this.state.filterByTag === null || project.tags.includes(this.state.filterByTag)){
             return(
-              <ProjectCard
+              <Card
                 project={project}
+                title={project.title}
+                thumbnail={project.image ? project.image.fluid.src : defaultThumbnail}
+                tags={project.tags}
                 key={index}
                 projectId={index.toString()}
                 handleCardClick={this.handleCardClick}
