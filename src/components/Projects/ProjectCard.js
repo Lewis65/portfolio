@@ -37,7 +37,7 @@ const ProjectBrief = styled.div`
 `
 
 const ProjectTitle = styled.h2`
-  background-image: linear-gradient(130deg, ${props => props.theme.colors.darkblue}, ${props => props.theme.colors.pink});
+  background-color: ${props => props.theme.colors.pink};
   color: white;
   display: block;
   margin: 0;
