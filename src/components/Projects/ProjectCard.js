@@ -1,60 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Tags from '../shared/Tags'
-import defaultProjectThumbnail from '../../images/project.jpg'
-
-const Card = styled.div`
-  background-color: white;
-  border-radius: 1rem;
-  box-shadow: ${props => props.theme.shadow};
-  box-sizing: border-box;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  font-size: 90%;
-  overflow-x: hidden;
-  margin-bottom: 1rem;
-  opacity: 0.9;
-  padding: 0;
-  transition: opacity 0.15s ease-out;
-  user-select: none;
-  width: 100%;
-  -ms-user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  &:hover {
-    opacity: 1;
-    h2 {
-      text-shadow: 3px 3px 6px ${props => props.theme.colors.pink};
-    }
-  }
-`
-
-const ProjectBrief = styled.div`
-  flex-grow: 1;
-  padding: 1rem;
-`
-
-const ProjectTitle = styled.h2`
-  background-color: ${props => props.theme.colors.pink};
-  color: white;
-  display: block;
-  margin: 0;
-  padding: 1rem;
-  text-shadow: 3px 3px 6px ${props => props.theme.colors.shadow};
-  transition: color 0.15s ease-out, text-shadow 0.15s ease-out;
-`
-
-const Thumbnail = styled.div`
-  background: url(${props => props.src});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  max-height: 300px;
-  min-height: 200px;
-  width: 100%;
-`
+import Card from '../shared/Card'
 
 const ProjectCard = (props) => {
 

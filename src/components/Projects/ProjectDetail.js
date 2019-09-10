@@ -63,14 +63,13 @@ const ProjectDetails = styled.div`
   }
 `
 
-const ProjectTitle = styled.h2`
-  background-image: linear-gradient(130deg, ${props => props.theme.colors.darkblue}, ${props => props.theme.colors.pink});
-  box-sizing: border-box;
+const Title = styled.h2`
+  background-color: ${props => props.theme.colors.pink};
   color: white;
   display: block;
   margin: 0;
   padding: 1rem;
-  text-shadow: 3px 3px 6px ${props => props.theme.colors.pink};
+  text-shadow: 3px 3px 6px ${props => props.theme.colors.shadow};
 `
 
 const Thumbnail = styled.img`
@@ -116,12 +115,12 @@ const ProjectDetail = (props) => {
   return(
     <Project>
       
-      <ProjectTitle>
+      <Title>
         {props.project.title}
         <Close onClick={props.handleProjectClose}>
           <i className="fa fa-times-circle"/>
         </Close>
-      </ProjectTitle>
+      </Title>
 
       <Wrapper>
         <Thumbnail src={image}/>

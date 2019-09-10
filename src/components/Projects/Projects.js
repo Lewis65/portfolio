@@ -12,7 +12,8 @@ class Projects extends React.Component {
     super(props)
     this.state = {
       displayProject: null,
-      filterByTag: null
+      filterByTag: null,
+      mappedProjects: null
     }
   }
 
@@ -27,15 +28,17 @@ class Projects extends React.Component {
   handleTagClick = (tag) => {
     this.setState({displayProject: null, filterByTag: tag})
   }
-  
-  render() {
 
-    let items = []
-    let errorRetrievingProjects = false
+  mapProjects = () => {
+    let result = {
+      error: false,
+      projects: []
+    }
 
     if(this.props.projects && this.props.projects.length){
-      items = this.props.projects.map((project, index) => {
+      result.projects = this.props.projects.map((project, index) => {
         console.log(project)
+        //TODO check project.description obj in console. How to render this text as markdown and not obj (react throws error)?
           if (this.state.filterByTag === null || project.tags.includes(this.state.filterByTag)){
             return(
               <Card
@@ -44,8 +47,9 @@ class Projects extends React.Component {
                 thumbnail={project.image ? project.image.fluid.src : defaultThumbnail}
                 tags={project.tags}
                 key={index}
+                body={[<p>{project.brief}</p>]}
                 projectId={index.toString()}
-                handleCardClick={this.handleCardClick}
+                handleCardClick={() => this.handleCardClick(index)}
                 handleTagClick={this.handleTagClick}
                 handleProjectClose={this.handleProjectClose}
               />
@@ -56,13 +60,24 @@ class Projects extends React.Component {
         }
       )
     } else {
-      errorRetrievingProjects = true
-      items = [<span>Sorry, there was a problem retrieving my projects from Contentful.</span>]
+      result.error = true
+      result.projects = [<span>Sorry, there was a problem retrieving my projects from Contentful.</span>]
     }
+
+    this.setState({mappedProjects: result})
+  }
+  
+  componentWillMount() {
+    this.mapProjects()
+  }
+
+  render() {
+
+    let mappedProjects = this.state.mappedProjects
 
     let allTags = []
 
-    if(!errorRetrievingProjects){
+    if(!mappedProjects.error){
       allTags = Array.from(new Set((this.props.projects.map(project => project.tags)).flat())).sort()
     }
 
@@ -79,7 +94,7 @@ class Projects extends React.Component {
         <React.Fragment>
           <h2>Tags:</h2>
           <Tags tags={allTags} tagType="projectList" handleTagClick={this.handleTagClick} filterByTag={this.state.filterByTag}/>
-          <CardTable>{items}</CardTable>
+          <CardTable>{mappedProjects.projects}</CardTable>
         </React.Fragment>
       )
     }

@@ -55,8 +55,8 @@ const ProjectLink = styled(Link)`
 //Create link group for 2-3 links using different preset icons depending on their anchor text
 const ProjectLinks = (props) => {
   if(props.links !== undefined){
-    let links = props.links.map(link => 
-      <ProjectLink to={link.to}>
+    let links = props.links.map((link, index) => 
+      <ProjectLink to={link.to} key={index}>
         <i className={icons[link.type]||icons.default}/>
         <span>{link.type}</span>
       </ProjectLink>
