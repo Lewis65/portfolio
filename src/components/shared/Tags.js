@@ -6,7 +6,6 @@ import Tag from './Tag'
 const TagContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: ${props => props.tagType !== "projectList" ? "4px" : "0"};
   width: auto;
 `
 
