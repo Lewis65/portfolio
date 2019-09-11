@@ -1,14 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Tags from './Tags'
-
 const Wrapper = styled.div`
   background-color: white;
   border-radius: 1rem;
   box-shadow: ${props => props.theme.shadow};
   box-sizing: border-box;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   font-size: 90%;
@@ -35,16 +32,6 @@ const Title = styled.h2`
   text-shadow: 3px 3px 6px ${props => props.theme.colors.shadow};
 `
 
-const Thumbnail = styled.div`
-  background: url(${props => props.src});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  max-height: 300px;
-  min-height: 200px;
-  width: 100%;
-`
-
 const Body = styled.div`
     flex-grow: 1;
     padding: 1rem;
@@ -58,13 +45,9 @@ const Card = (props) => {
       {props.title}
     </Title>
 
-    {props.thumbnail && <Thumbnail src={props.thumbnail} onClick={props.handleCardClick} />}
-
     <Body>
-      {props.body}
+      {props.children}
     </Body>
-
-    <Tags tags={props.tags.sort()} tagType={props.tagType} />
 
   </Wrapper>
 }
