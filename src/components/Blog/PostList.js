@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Card from './Card'
+import Card from './PostCard'
 import CardTable from '../shared/CardTable'
 
 const List = (props) => {
