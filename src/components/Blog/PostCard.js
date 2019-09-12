@@ -23,6 +23,10 @@ const CardInfo = styled.div`
     }
 `
 
+const Description = styled.p`
+    margin: 0.5rem 0 1rem 0;
+`
+
 const ReadMoreLink = styled(Link)`
     color: ${props => props.theme.colors.lightblue};
     text-decoration: none;
@@ -35,10 +39,8 @@ const TitleLink = styled(Link)`
 
 const BlogCard = (props) => {
     const title = <TitleLink to={`/blog/${props.post.slug}`}>{props.post.title}</TitleLink>
-    return <Card
-        title={title}
-    >
-        <p>{props.post.description.description}</p>
+    return <Card title={title}>
+        <Description>{props.post.description.description}</Description>
         <CardInfo>
             <CardDate>
                 {moment(props.post.createdAt).format("MMM 'YY")}
