@@ -7,6 +7,10 @@ import CardTable from '../shared/CardTable'
 import Tags from '../shared/Tags'
 import ProjectDetail from './ProjectDetail'
 
+const Brief = styled.p`
+  margin: 1rem 0;
+`
+
 const Thumbnail = styled.div`
   width: 100%;
   margin: 0;
@@ -58,7 +62,7 @@ class Projects extends React.Component {
                 <Thumbnail>
                   <Image fluid={project.image ? project.image.fluid : this.props.defaultProjectThumbnail.fluid}/>
                 </Thumbnail>
-                <p>{project.brief}</p>
+                <Brief>{project.brief}</Brief>
                 <Tags tags={project.tags}/>
               </Card>
             )
