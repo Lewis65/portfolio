@@ -44,15 +44,16 @@ class Projects extends React.Component {
               <Card
                 project={project}
                 title={project.title}
-                thumbnail={project.image ? project.image.fluid.src : defaultThumbnail}
-                tags={project.tags}
                 key={index}
-                body={[<p>{project.brief}</p>]}
                 projectId={index.toString()}
                 handleCardClick={() => this.handleCardClick(index)}
                 handleTagClick={this.handleTagClick}
                 handleProjectClose={this.handleProjectClose}
-              />
+              >
+                <img src={project.image ? project.image.fluid.src : defaultThumbnail}/>
+                <p>{project.brief}</p>
+                <Tags tags={project.tags}/>
+              </Card>
             )
           } else {
             return null
