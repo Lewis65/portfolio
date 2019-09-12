@@ -1,10 +1,16 @@
 import React from 'react'
+import styled from 'styled-components'
+import Image from 'gatsby-image'
 
-import CardTable from '../shared/CardTable'
 import Card from '../shared/Card'
+import CardTable from '../shared/CardTable'
 import Tags from '../shared/Tags'
 import ProjectDetail from './ProjectDetail'
-import defaultThumbnail from '../../images/project.jpg'
+
+const Thumbnail = styled.div`
+  width: 100%;
+  margin: 0;
+`
 
 class Projects extends React.Component {
 
@@ -38,7 +44,6 @@ class Projects extends React.Component {
     if(this.props.projects && this.props.projects.length){
       result.projects = this.props.projects.map((project, index) => {
         console.log(project)
-        //TODO check project.description obj in console. How to render this text as markdown and not obj (react throws error)?
           if (this.state.filterByTag === null || project.tags.includes(this.state.filterByTag)){
             return(
               <Card
@@ -50,7 +55,9 @@ class Projects extends React.Component {
                 handleTagClick={this.handleTagClick}
                 handleProjectClose={this.handleProjectClose}
               >
-                <img src={project.image ? project.image.fluid.src : defaultThumbnail}/>
+                <Thumbnail>
+                  <Image fluid={project.image ? project.image.fluid : this.props.defaultProjectThumbnail.fluid}/>
+                </Thumbnail>
                 <p>{project.brief}</p>
                 <Tags tags={project.tags}/>
               </Card>

@@ -14,12 +14,14 @@ const PortfolioPage = (props) => {
     projectsToDisplay.push(edge.node)
   })
 
+  const defaultProjectThumbnail = props.data.file.childImageSharp
+
   return(
   <Layout>
     <SEO title="Projects" keywords={['Lewis Horwood', 'web developer', 'react', 'Seoul', 'Calgary', 'javascript developer', 'programmer', 'software engineer', 'frontend']} />
     <Main>
       <Heading>Projects</Heading>
-      <Projects projects={projectsToDisplay}/>
+      <Projects projects={projectsToDisplay} defaultProjectThumbnail={defaultProjectThumbnail}/>
     </Main>
   </Layout>
   )
@@ -44,7 +46,7 @@ export const pageQuery = graphql`
           image {
             description
             fluid {
-              src
+              ...GatsbyContentfulFluid
             }
           }
           posts {
@@ -59,6 +61,13 @@ export const pageQuery = graphql`
           codepen
           github
           demo
+        }
+      }
+    }
+    file {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
         }
       }
     }
