@@ -14,7 +14,6 @@ const Wrapper = styled.div`
   padding: 0;
   transition: opacity 0.15s ease-out;
   user-select: none;
-  width: 100%;
   -ms-user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -33,7 +32,7 @@ const Title = styled.h2`
 `
 
 const Body = styled.div`
-    flex-grow: 1;
+    flex: 1 1 0;
     padding: 1rem;
 `
 
