@@ -47,7 +47,7 @@ const BlogCard = (props) => {
             </CardDate>
             <ReadMoreLink to={`/blog/${props.post.slug}`}>Read more...</ReadMoreLink>
         </CardInfo>
-        <Tags tags={props.post.tags ? props.post.tags.sort() : null}/>
+        <Tags tags={props.post.tags ? props.post.tags.sort() : null} linkPrefix={'/blog/tags'}/>
     </Card>
 }
 

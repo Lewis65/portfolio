@@ -125,7 +125,7 @@ const ProjectDetail = (props) => {
       <Wrapper>
         <Thumbnail src={image}/>
         <ProjectDetails>
-          <Tags tags={props.project.tags} tagType="projectList" handleTagClick={props.handleTagClick} padding="0" noMargin="true"/>
+          <Tags tags={props.project.tags} handleTagClick={props.handleTagClick}/>
           <ProjectBrief>
             {props.project.brief}
           </ProjectBrief>

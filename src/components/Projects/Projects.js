@@ -36,7 +36,8 @@ const Projects = (props) => {
   //Get a Set of all tags used in Contentful projects
   const tagsOfAllProjects = Array.from(
     new Set(
-      props.projects.map(project => project.tags)
+      props.projects
+      .map(project => project.tags)
       .flat()
     )
   ).sort()
@@ -57,7 +58,7 @@ const Projects = (props) => {
 
   return <React.Fragment>
     <Tags tags={tagsOfAllProjects} handleTagClick={setTagToFilterBy}/>
-    {projectToDisplay ? <ProjectDetail/> : <CardTable>{cards}</CardTable>}
+    {projectToDisplay ? <ProjectDetail project={projectToDisplay}/> : <CardTable>{cards}</CardTable>}
   </React.Fragment>
 
 }
