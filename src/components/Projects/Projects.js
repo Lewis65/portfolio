@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Image from 'gatsby-image'
 
@@ -11,112 +11,55 @@ const Brief = styled.p`
   margin: 1rem 0;
 `
 
-const Thumbnail = styled.div`
+const Thumbnail = styled(Image)`
+height: 350px;
   width: 100%;
-  margin: 0;
 `
 
-class Projects extends React.Component {
+const Projects = (props) => {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      displayProject: null,
-      filterByTag: null,
-      mappedProjects: null
-    }
-  }
+  const [tagToFilterBy, setTagToFilterBy] = useState(null);
+  const [projectToDisplay, setProjectToDisplay] = useState(null);
+  const [projectCards, setProjectCards] = useState(props.projects);
 
-  handleCardClick = (index) => {
-    this.setState({displayProject: this.props.projects[index]})
-  }
-
-  handleProjectClose = () => {
-    this.setState({displayProject: null})
-  }
-
-  handleTagClick = (tag) => {
-    this.setState({displayProject: null, filterByTag: tag})
-  }
-
-  mapProjects = () => {
-    let result = {
-      error: false,
-      projects: []
-    }
-
-    if(this.props.projects && this.props.projects.length){
-      result.projects = this.props.projects.map((project, index) => {
-        console.log(project)
-          if (this.state.filterByTag === null || project.tags.includes(this.state.filterByTag)){
-            return(
-              <Card
-                project={project}
-                title={project.title}
-                key={index}
-                projectId={index.toString()}
-                handleCardClick={() => this.handleCardClick(index)}
-                handleTagClick={this.handleTagClick}
-                handleProjectClose={this.handleProjectClose}
-              >
-                <Thumbnail>
-                  <Image fluid={project.image ? project.image.fluid : this.props.defaultProjectThumbnail.fluid}/>
-                </Thumbnail>
-                <Brief>{project.brief}</Brief>
-                <Tags tags={project.tags}/>
-              </Card>
-            )
-          } else {
-            return null
-          }
-        }
-      )
+  useEffect(() => {
+    if(tagToFilterBy === null){
+      setProjectCards(props.projects)
     } else {
-      result.error = true
-      result.projects = [<span>Sorry, there was a problem retrieving my projects from Contentful.</span>]
+      let projects = props.projects.filter(project => {
+        return project.tags.includes(tagToFilterBy)
+      })
+      setProjectCards(projects)
     }
+  }, [tagToFilterBy])
 
-    this.setState({mappedProjects: result})
-  }
-  
-  componentWillMount() {
-    this.mapProjects()
-  }
-
-  render() {
-
-    let mappedProjects = this.state.mappedProjects
-
-    let allTags = []
-
-    if(!mappedProjects.error){
-      allTags = Array.from(new Set((this.props.projects.map(project => project.tags)).flat())).sort()
-    }
-
-    if(this.state.filterByTag !== null){
-      let indexOfFilteredTag = allTags.indexOf(this.state.filterByTag)
-      allTags.splice(indexOfFilteredTag, 1)
-    }
-
-    let children;
-    if(this.state.displayProject !== null){
-      children = <ProjectDetail project={this.state.displayProject} handleProjectClose={this.handleProjectClose} handleTagClick={this.handleTagClick}/>
-    } else {
-      children = (
-        <React.Fragment>
-          <h2>Tags:</h2>
-          <Tags tags={allTags} tagType="projectList" handleTagClick={this.handleTagClick} filterByTag={this.state.filterByTag}/>
-          <CardTable>{mappedProjects.projects}</CardTable>
-        </React.Fragment>
-      )
-    }
-
-    return (
-      <React.Fragment>
-        {children}
-      </React.Fragment>
+  //Get a Set of all tags used in Contentful projects
+  const tagsOfAllProjects = Array.from(
+    new Set(
+      props.projects.map(project => project.tags)
+      .flat()
     )
-  }
+  ).sort()
+
+  let cards = projectCards.map((project, index) => {
+    return <Card
+      project={project}
+      title={project.title}
+      key={index}
+      onClick={() => setProjectToDisplay(project)}
+      handleProjectClose={() => setProjectToDisplay(null)}
+    >
+      <Thumbnail fluid={project.image ? project.image.fluid : props.defaultProjectThumbnail.fluid}/>
+      <Brief>{project.brief}</Brief>
+      <Tags tags={project.tags} handleTagClick={setTagToFilterBy}/>
+    </Card>
+  })
+
+  return <React.Fragment>
+    <Tags tags={tagsOfAllProjects} handleTagClick={setTagToFilterBy}/>
+    {projectToDisplay ? <ProjectDetail/> : <CardTable>{cards}</CardTable>}
+  </React.Fragment>
+
 }
 
 export default Projects
