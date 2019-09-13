@@ -6,44 +6,22 @@ import Tag from './Tag'
 const TagContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin: -0.25rem;
   width: auto;
 `
 
 const Tags = (props) => {
-  let tags = []
-  switch (props.tagType){
-    case 'blog':
-      tags = props.tags.map((item, key) => {
-        return <Tag large key={key} tag={item} tagType={props.tagType}/>
-      })
-      break;
-    case 'blogCard':
-      tags = props.tags.map((item, key) => {
-        return <Tag key={key} tag={item} tagType={props.tagType}/>
-      })
-      break;
-    case 'projectCard':
-      tags = props.tags.map((item, key) => {
-        return <Tag key={key} tag={item} tagType={props.tagType} handleTagClick={props.handleTagClick} filters={props.filters}/>
-      })
-      break;
-    case 'projectList':
-      tags = props.tags.map((item, key) => {
-        return <Tag large key={key} tag={item} tagType={props.tagType} handleTagClick={props.handleTagClick} filters={props.filters}/>
-      })
-      if(props.filterByTag && props.filterByTag !== null){
-        tags.unshift(<Tag tag={props.filterByTag} tagType={props.tagType} handleTagClick={() => props.handleTagClick(null)} activeFilter="true" filters={props.filters}/>)
-      }
-      break;
-    default:
-      tags = props.tags.map((item, key) => {
-        return <Tag key={key} tag={item} tagType={props.tagType}/>
-      })
-      break;
-  }
+  let tags = props.tags.map((tag, key) => {
+    return <Tag 
+      key={key} 
+      tag={tag} 
+      handleTagClick={props.handleTagClick}
+      linkPrefix={props.linkPrefix}
+    />
+  })
 
   return(
-    <TagContainer filters={props.filters}>
+    <TagContainer>
       {tags}
     </TagContainer>
   )

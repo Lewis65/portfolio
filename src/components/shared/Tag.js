@@ -4,34 +4,20 @@ import React from 'react'
 import Link from './Link'
 
 const TagLink = styled(Link)`
-  background-color: ${props => props.activeFilter==="true" ? props.theme.colors.pink : props.theme.colors.lightblue};
-  border-radius: 20px;
+  background-color: ${props => props.theme.colors.lightblue};
+  border-radius: 0.5rem;
   color: white;
-  cursor: pointer;
   display: inline-flex;
-  font-size: ${props => props.large ? "14px" : "12px"};
+  font-size: 0.75rem;
   font-weight: 600;
-  margin-bottom: 4px;
-  margin-right: 6px;
-  padding: ${props => props.padding || props.large ? "4px 7px" : "2px 6px"};
+  margin: 0.25rem;
+  padding: 0.25rem;
   text-decoration: none;
-  &:last-child {
-    margin-right: 0;
-  }
-  @media screen and (min-width: 1024px){
-    font-size: ${props => props.large ? "16px" : "13px"}
-  }
-`
-
-const TagLinkWithHover = styled(TagLink)`
-  &:hover {
-    background-color: ${props => props.theme.colors.pink};
-  }
 `
 
 const CloseButtonWrapper = styled.span`
   float: right;
-  margin: 0 -2px 0 6px;
+  margin: 0 -0.25rem 0 0.25rem;
 `
 
 const CloseButton = () => {
@@ -41,33 +27,12 @@ const CloseButton = () => {
 }
 
 const Tag = (props) => {
-  switch (props.tagType) {
-    case 'blog':
-      return <TagLinkWithHover large to={`/blog/tags/${props.tag}`}>
-        {props.tag}
-      </TagLinkWithHover>
-    case 'blogCard':
-      return <TagLinkWithHover to={`/blog/tags/${props.tag}`}>
-        {props.tag}
-      </TagLinkWithHover>
-    case 'projectCard':
-      return <TagLink
-      tag={props.tag}
-      inFilters={props.filters}>
-        {props.tag}
-      </TagLink>
-    case 'projectList':
-      return <TagLinkWithHover large
-      tag={props.tag}
-      onClick={()=>props.handleTagClick(props.tag)}
-      activeFilter={props.activeFilter}
-      inFilters={props.filters}>
-        {props.tag}
-        {props.activeFilter === "true" ? <CloseButton/> : null}
-      </TagLinkWithHover>
-    default:
-      return <TagLink>{props.tag}</TagLink>
+  if(props.linkPrefix){
+    return <TagLink to={`${props.linkPrefix}/${props.tag}`}>#{props.tag}</TagLink>
+  } else {
+    return <TagLink onClick={() => props.handleTagClick(props.tag)}>#{props.tag}</TagLink>
   }
+  
 }
 
 export default Tag
