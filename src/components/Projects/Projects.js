@@ -5,6 +5,7 @@ import Image from 'gatsby-image'
 import Card from '../shared/Card'
 import CardTable from '../shared/CardTable'
 import Tags from '../shared/Tags'
+import FilterTags from './FilterTags'
 import ProjectDetail from './ProjectDetail'
 
 const Brief = styled.p`
@@ -42,6 +43,7 @@ const Projects = (props) => {
     )
   ).sort()
 
+  //Map all the projects to cards
   let cards = projectCards.map((project, index) => {
     return <Card
       project={project}
@@ -52,12 +54,12 @@ const Projects = (props) => {
     >
       <Thumbnail fluid={project.image ? project.image.fluid : props.defaultProjectThumbnail.fluid}/>
       <Brief>{project.brief}</Brief>
-      <Tags tags={project.tags} handleTagClick={setTagToFilterBy}/>
+      <Tags tags={project.tags} handleTagClick={setTagToFilterBy} clickable="true"/>
     </Card>
   })
 
   return <React.Fragment>
-    <Tags tags={tagsOfAllProjects} handleTagClick={setTagToFilterBy}/>
+    <FilterTags tags={tagsOfAllProjects} handleTagClick={setTagToFilterBy} tagToFilterBy={tagToFilterBy}/>
     {projectToDisplay ? <ProjectDetail project={projectToDisplay}/> : <CardTable>{cards}</CardTable>}
   </React.Fragment>
 

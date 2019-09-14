@@ -6,7 +6,6 @@ Feel free to use this repo for your own portfolio, but please make sure to inclu
 
 ## Todo
 
-- Unique filterable Tags on /projects
 - 'Want more projects?' section to link to Github again
 - Rewrite projectDetail to simplify component
 - Change external links to HTML on Contentful markdown

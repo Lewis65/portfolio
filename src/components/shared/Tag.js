@@ -4,6 +4,7 @@ import React from 'react'
 import Link from './Link'
 
 const TagLink = styled(Link)`
+  align-items: center;
   background-color: ${props => props.theme.colors.lightblue};
   border-radius: 0.5rem;
   color: white;
@@ -11,26 +12,26 @@ const TagLink = styled(Link)`
   font-size: 0.75rem;
   font-weight: 600;
   margin: 0.25rem;
+  overflow: hidden;
   padding: 0.25rem;
   text-decoration: none;
+  &.clickable {
+    cursor: pointer;
+    &:hover {
+      background-color: ${props => props.theme.colors.pink};
+    }
+  }
 `
-
-const CloseButtonWrapper = styled.span`
-  float: right;
-  margin: 0 -0.25rem 0 0.25rem;
-`
-
-const CloseButton = () => {
-  return <CloseButtonWrapper>
-    <i className="fa fa-times-circle"/>
-  </CloseButtonWrapper>
-}
 
 const Tag = (props) => {
   if(props.linkPrefix){
-    return <TagLink to={`${props.linkPrefix}/${props.tag}`}>#{props.tag}</TagLink>
+    return <TagLink className={`${props.clickable && 'clickable '}${props.className || ''}`} to={`${props.linkPrefix}/${props.tag}`}>
+      {props.children || `#${props.tag}`}
+    </TagLink>
   } else {
-    return <TagLink onClick={() => props.handleTagClick(props.tag)}>#{props.tag}</TagLink>
+    return <TagLink className={`${props.clickable && 'clickable '}${props.className || ''}`} onClick={() => props.handleTagClick(props.tag)}>
+      {props.children || `#${props.tag}`}
+    </TagLink>
   }
   
 }

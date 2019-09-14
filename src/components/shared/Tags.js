@@ -17,6 +17,7 @@ const Tags = (props) => {
       tag={tag} 
       handleTagClick={props.handleTagClick}
       linkPrefix={props.linkPrefix}
+      clickable={props.clickable}
     />
   })
 
