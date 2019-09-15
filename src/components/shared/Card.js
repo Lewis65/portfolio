@@ -40,7 +40,7 @@ const Card = (props) => {
 
   return <Wrapper>
 
-    <Title>
+    <Title onClick={props.handleCardClick ? props.handleCardClick : null}>
       {props.title}
     </Title>
 
