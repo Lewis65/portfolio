@@ -19,6 +19,9 @@ const Wrapper = styled.div`
   -webkit-user-select: none;
   &:hover {
     opacity: 1;
+    .clickable {
+      cursor: pointer;
+    }
   }
 `
 
@@ -40,7 +43,7 @@ const Card = (props) => {
 
   return <Wrapper>
 
-    <Title onClick={props.handleCardClick ? props.handleCardClick : null}>
+    <Title className={`${props.handleCardClick ? 'clickable' : ''}`} onClick={props.handleCardClick ? props.handleCardClick : null}>
       {props.title}
     </Title>
 

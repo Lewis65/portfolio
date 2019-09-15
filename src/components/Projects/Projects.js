@@ -13,7 +13,7 @@ const Brief = styled.p`
 `
 
 const Thumbnail = styled(Image)`
-height: 350px;
+  max-height: 350px;
   width: 100%;
 `
 
@@ -59,7 +59,7 @@ const Projects = (props) => {
 
   return <React.Fragment>
     {projectToDisplay ? 
-    <ProjectDetail project={projectToDisplay} handleProjectClose={() => setProjectToDisplay(null)}/> : 
+    <ProjectDetail project={projectToDisplay} defaultProjectThumbnail={props.defaultProjectThumbnail} handleProjectClose={() => setProjectToDisplay(null)}/> : 
     <><FilterTags tags={tagsOfAllProjects} handleTagClick={setTagToFilterBy} tagToFilterBy={tagToFilterBy}/><CardTable>{cards}</CardTable></>}
   </React.Fragment>
 
