@@ -49,18 +49,18 @@ const Projects = (props) => {
       project={project}
       title={project.title}
       key={index}
-      onClick={() => setProjectToDisplay(project)}
-      handleProjectClose={() => setProjectToDisplay(null)}
+      handleCardClick={() => setProjectToDisplay(project)}
     >
-      <Thumbnail fluid={project.image ? project.image.fluid : props.defaultProjectThumbnail.fluid}/>
+      <Thumbnail fluid={project.image ? project.image.fluid : props.defaultProjectThumbnail.fluid} onClick={() => setProjectToDisplay(project)}/>
       <Brief>{project.brief}</Brief>
       <Tags tags={project.tags} handleTagClick={setTagToFilterBy} clickable="true"/>
     </Card>
   })
 
   return <React.Fragment>
-    <FilterTags tags={tagsOfAllProjects} handleTagClick={setTagToFilterBy} tagToFilterBy={tagToFilterBy}/>
-    {projectToDisplay ? <ProjectDetail project={projectToDisplay}/> : <CardTable>{cards}</CardTable>}
+    {projectToDisplay ? 
+    <ProjectDetail project={projectToDisplay} handleProjectClose={() => setProjectToDisplay(null)}/> : 
+    <><FilterTags tags={tagsOfAllProjects} handleTagClick={setTagToFilterBy} tagToFilterBy={tagToFilterBy}/><CardTable>{cards}</CardTable></>}
   </React.Fragment>
 
 }

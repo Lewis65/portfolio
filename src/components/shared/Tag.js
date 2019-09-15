@@ -29,7 +29,7 @@ const Tag = (props) => {
       {props.children || `#${props.tag}`}
     </TagLink>
   } else {
-    return <TagLink className={`${props.clickable && 'clickable '}${props.className || ''}`} onClick={() => props.handleTagClick(props.tag)}>
+    return <TagLink className={`${props.clickable && 'clickable '}${props.className || ''}`} onClick={props.handleTagClick && (() => props.handleTagClick(props.tag))}>
       {props.children || `#${props.tag}`}
     </TagLink>
   }
