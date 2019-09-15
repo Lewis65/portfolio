@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Image from 'gatsby-image/withIEPolyfill'
 import ProjectLinks from './ProjectLinks'
 import Tags from '../shared/Tags'
-import defaultProjectThumbnail from '../../images/project.jpg'
 
 const Close = styled.div`
   cursor: pointer;
@@ -72,20 +72,17 @@ const Title = styled.h2`
   text-shadow: 3px 3px 6px ${props => props.theme.colors.shadow};
 `
 
-const Thumbnail = styled.img`
-  object-fit: contain;
+const Thumbnail = styled(Image)`
   width: 100%;
-  height: 100%;
+  max-height: 100%;
   margin: 0;
   @media screen and (min-width: 1024px) {
-    min-height: 400px;
+    min-height: 20rem;
     width: 50%;
   }
 `
 
 const ProjectDetail = (props) => {
-
-  console.log(props.project)
 
   //Used to set inner html in project description and render markdown correctly
   const description = {
@@ -107,25 +104,21 @@ const ProjectDetail = (props) => {
   pushLinks("demo")
   pushLinks("github")
 
-  let image = defaultProjectThumbnail
-  if(props.project.image && props.project.image.fluid){
-    image = props.project.image.fluid.src
-  }
-
   return(
     <Project>
-      
       <Title>
         {props.project.title}
         <Close onClick={props.handleProjectClose}>
           <i className="fa fa-times-circle"/>
         </Close>
       </Title>
-
       <Wrapper>
-        <Thumbnail src={image}/>
+        <Thumbnail
+        fluid={props.project.image ? props.project.image.fluid : props.defaultProjectThumbnail.fluid}
+        objectFit="contain"
+        />
         <ProjectDetails>
-          <Tags tags={props.project.tags} handleTagClick={props.handleTagClick}/>
+          <Tags tags={props.project.tags}/>
           <ProjectBrief>
             {props.project.brief}
           </ProjectBrief>
