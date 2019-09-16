@@ -5,12 +5,10 @@ import Button from '../shared/Button'
 
 const Field = styled.div`
   background-color: white;
-  border: 2px solid ${props => props.theme.colors.darkblue};
-  border-radius: 1rem;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
+  border: 0.125rem solid ${props => props.theme.colors.lightblue};
+  margin: 0.5rem 0 1.5rem;
   &:focus-within {
-    border-color: ${props => props.theme.colors.lightblue};
+    border-color: ${props => props.theme.colors.pink};
   }
   input, textarea {
     border: 0;
@@ -19,7 +17,7 @@ const Field = styled.div`
     font-family: ${props => props.theme.fonts.body};
     font-size: 100%;
     outline: none;
-    padding: 0.5rem;
+    padding: 1rem;
     resize: none;
     width: 100%;
   }
@@ -28,7 +26,14 @@ const Field = styled.div`
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  max-width: 500px;
+  max-width: 50rem;
+`
+
+const Send = styled(Button)`
+  transition: background-color 0.15s ease-out;
+  &:hover {
+    background-color: ${props => props.theme.colors.pink}
+  }
 `
 
 class ContactForm extends React.Component {
@@ -66,7 +71,7 @@ class ContactForm extends React.Component {
       <Field><input type="text" name="email" value={this.state.email} onChange={this.handleChange}></input></Field>
       <label>Message</label>
       <Field><textarea rows="8" name="body" value={this.state.body} onChange={this.handleChange}></textarea></Field>
-      <Button>Send</Button>
+      <Send>Send</Send>
     </Form>
     
   }
