@@ -10,7 +10,7 @@ const NavLink = styled(ButtonLink)`
   margin: 0;
   @media screen and (min-width: 1024px) {
     box-shadow: 0.25rem 0.25rem ${props => props.theme.colors.lightblue};
-    margin-top: 1.25rem;
+    margin-top: 1.5rem;
     transition: box-shadow 0.15s ease-out;
     &:hover {
       box-shadow: 0.25rem 0.25rem ${props => props.theme.colors.pink};
