@@ -13,10 +13,6 @@ const Button = styled(Link)`
   text-decoration: none;
   @media screen and (min-width: 1024px) {
     font-size: 150%;
-    transition: background-color 0.15s ease-out;
-    &:hover {
-      background-color: ${props => props.theme.colors.red};
-    }
   }
 `
 

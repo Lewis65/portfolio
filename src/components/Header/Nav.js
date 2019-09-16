@@ -3,22 +3,18 @@ import React from 'react'
 import ButtonLink from '../shared/ButtonLink'
 
 const NavLink = styled(ButtonLink)`
-  background-color: ${props => props.cta ? props.theme.colors.pink : "white"};
+  background-color: white;
   border-radius: 0;
-  color: ${props => props.cta ? "white" : props.theme.colors.darkblue};
+  color: ${props => props.theme.colors.body};
   flex-grow: 1;
   margin: 0;
   @media screen and (min-width: 1024px) {
-    border-radius: 1rem;
-    margin: 0.5rem 0;
-    transition: background-color 0.15s ease-out, color 0.15s ease-out;
+    border-bottom: 0.25rem solid ${props => props.theme.colors.lightblue};
+    margin-top: 1rem;
+    transition: border-color 0.15s ease-out;
     &:hover {
-      background-color: ${props => props.cta ? props.theme.colors.red : "white"};
-      color: ${props => props.cta ? "white" : props.theme.colors.lightblue};
+      border-color: ${props => props.theme.colors.pink};
     }
-  }
-  @media screen and (max-width: 1024px) {
-    box-shadow: none;
   }
 `
 
@@ -28,6 +24,7 @@ const NavWrapper = styled.nav`
   right: 0;
   width: 100%;
   @media screen and (min-width: 1024px) {
+    align-items: flex-end;
     flex-direction: column;
     margin-top: 1rem;
     width: auto;
@@ -36,7 +33,7 @@ const NavWrapper = styled.nav`
 
 const Nav = () => (
   <NavWrapper id="nav">
-    <NavLink to='/contact' cta='true'>contact me</NavLink>
+    <NavLink to='/contact'>contact me</NavLink>
     <NavLink to='/projects'>projects</NavLink>
     <NavLink to='/blog'>blog</NavLink>
   </NavWrapper>
