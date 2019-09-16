@@ -58,9 +58,14 @@ const Projects = (props) => {
   })
 
   return <React.Fragment>
-    {projectToDisplay ? 
-    <ProjectDetail project={projectToDisplay} defaultProjectThumbnail={props.defaultProjectThumbnail} handleProjectClose={() => setProjectToDisplay(null)}/> : 
-    <><FilterTags tags={tagsOfAllProjects} handleTagClick={setTagToFilterBy} tagToFilterBy={tagToFilterBy}/><CardTable>{cards}</CardTable></>}
+    {
+      projectToDisplay ? 
+      <ProjectDetail project={projectToDisplay} defaultProjectThumbnail={props.defaultProjectThumbnail} handleProjectClose={() => setProjectToDisplay(null)}/> : 
+      <>
+        <FilterTags tags={tagsOfAllProjects} handleTagClick={setTagToFilterBy} tagToFilterBy={tagToFilterBy}/>
+        <CardTable>{cards}</CardTable>
+      </>
+    }
   </React.Fragment>
 
 }
