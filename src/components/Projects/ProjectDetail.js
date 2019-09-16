@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Image from 'gatsby-image/withIEPolyfill'
+import Image from 'gatsby-image'
 import ProjectLinks from './ProjectLinks'
 import Tags from '../shared/Tags'
 
@@ -115,7 +115,6 @@ const ProjectDetail = (props) => {
       <Wrapper>
         <Thumbnail
         fluid={props.project.image ? props.project.image.fluid : props.defaultProjectThumbnail.fluid}
-        objectFit="contain"
         />
         <ProjectDetails>
           <Tags tags={props.project.tags}/>
