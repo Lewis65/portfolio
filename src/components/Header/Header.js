@@ -14,7 +14,7 @@ const HeaderTitle = styled(Link)`
   padding: 0;
   text-align: center;
   text-decoration: none;
-  text-shadow: 2px 2px ${props => props.theme.colors.shadow};
+  text-shadow: 0.125rem 0.125rem ${props => props.theme.colors.shadow};
   @media screen and (min-width: 1024px) {
     font-size: 300%;
     margin-bottom: 1rem;

@@ -9,11 +9,11 @@ const NavLink = styled(ButtonLink)`
   flex-grow: 1;
   margin: 0;
   @media screen and (min-width: 1024px) {
-    border-bottom: 0.25rem solid ${props => props.theme.colors.lightblue};
-    margin-top: 1rem;
-    transition: border-color 0.15s ease-out;
+    box-shadow: 0.25rem 0.25rem ${props => props.theme.colors.lightblue};
+    margin-top: 1.25rem;
+    transition: box-shadow 0.15s ease-out;
     &:hover {
-      border-color: ${props => props.theme.colors.pink};
+      box-shadow: 0.25rem 0.25rem ${props => props.theme.colors.pink};
     }
   }
 `
