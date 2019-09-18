@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 import Heading from '../shared/Heading'
 import Section from '../About/Section'
-import { IconButtonLink } from './IntroButton'
+import { IconButton, IconButtonExt } from './IntroButton'
 
 const ButtonGroup = styled.div`
     display: inline-flex;
@@ -36,9 +36,9 @@ const Intro = () => (
         <p>I'm a Javascript developer in Calgary, AB. I write apps and websites with React, SASS/styled-components, Node.js, Express,  and more.</p>
         <p>Here you can see selected <IntroLink to='/projects'>projects</IntroLink> I've completed, as well as my <IntroLink to ='/blog'>blog</IntroLink>. You can also <IntroLink to='/contact'>contact me</IntroLink> or view <IntroLink to='#'>my resume</IntroLink>.</p>
         <ButtonGroup>
-            <IconButtonLink to='#' label='Resume' icon='far fa-file-alt'/>
-            <IconButtonLink to='https://github.com/Lewis65' label='Github' icon='fab fa-github'/>
-            <IconButtonLink to='https://www.linkedin.com/in/lewishorwood/' label='Linkedin' icon='fab fa-linkedin'/>
+            <IconButton to='#' label='Resume' icon='far fa-file-alt'/>
+            <IconButtonExt href='https://github.com/Lewis65' label='Github' icon='fab fa-github'/>
+            <IconButtonExt href='https://www.linkedin.com/in/lewishorwood/' label='Linkedin' icon='fab fa-linkedin'/>
         </ButtonGroup>
     </Section>
 )
