@@ -23,6 +23,11 @@ const NavWrapper = styled.nav`
   position: relative;
   right: 0;
   width: 100%;
+  @media screen and (max-width: 1024px){
+    a {
+      box-shadow: none;
+    }
+  }
   @media screen and (min-width: 1024px) {
     align-items: flex-end;
     flex-direction: column;
