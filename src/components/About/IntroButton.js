@@ -1,36 +1,46 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import ButtonLink from '../shared/ButtonLink'
+import { Link } from 'gatsby'
 
-const IconButton = styled(ButtonLink)`
-    display: flex;
-    border: 3px solid ${props => props.theme.colors.lightblue};
+const IconLink = styled(Link)`
+    background-color: ${props => props.theme.colors.lightblue};
+    display: inline-flex;
+    text-decoration: none;
+    transition: background-color 0.15s ease-out;
     &:hover {
-        border-color: ${props => props.theme.colors.pink};
+        background-color: ${props => props.theme.colors.pink};
     }
     div {
-        padding: 0.5rem;
+        padding: 0.75rem;
     }
 `
 
 const Icon = styled.div`
-    background-color: ${props => props.theme.colors.lightblue};
     color: white;
+    flex-grow: 0;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    padding: 0;
+    height: 1.5rem;
+    width: 1.5rem;
 `
 
 const Label = styled.div`
     background-color: white;
     color: ${props => props.theme.colors.body};
+    flex-grow: 1;
 `
 
-export default Button = (props) => {
-    <IconButton to={props.to}>
+const IconButtonLink = (props) => {
+    return <IconLink to={props.to}>
         <Icon>
             <i className={props.icon}/>
         </Icon>
         <Label>
             {props.label}
         </Label>
-    </IconButton>
+    </IconLink>
 }
+
+export { IconButtonLink }

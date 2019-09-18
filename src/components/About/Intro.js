@@ -1,16 +1,45 @@
 import React from 'react'
+import styled from 'styled-components'
 
-import Link from 'gatsby'
+import { Link } from 'gatsby'
 import Heading from '../shared/Heading'
-import ButtonLink from '../shared/ButtonLink'
 import Section from '../About/Section'
+import { IconButtonLink } from './IntroButton'
+
+const ButtonGroup = styled.div`
+    display: inline-flex;
+    flex-direction: column;
+    margin: auto;
+    & > a {
+        margin: 0 0 1rem 0;
+        :last-child {
+            margin: 0;
+        }
+    }
+    @media screen and (min-width: 1024px){
+        flex-direction: row;
+        & > a {
+            margin: 0 1rem 0 0;
+        }
+    }
+`
+
+const IntroLink = styled(Link)`
+    border-bottom: 1px solid ${props => props.theme.colors.pink};
+    color: ${props => props.theme.colors.pink};
+    text-decoration: none;
+`
 
 const Intro = () => (
     <Section className='about-section'>
         <Heading hero>Hi. I'm Lewis.</Heading>
         <p>I'm a Javascript developer in Calgary, AB. I write apps and websites with React, SASS/styled-components, Node.js, Express,  and more.</p>
-        <p>Here you can see selected <Link to='/projects'>projects</Link> I've completed, as well as my <Link to ='/blog'>blog</Link>. You can also <Link to='/contact'>contact me</Link> or view <Link to='#'>my resume</Link>.</p>
-        
+        <p>Here you can see selected <IntroLink to='/projects'>projects</IntroLink> I've completed, as well as my <IntroLink to ='/blog'>blog</IntroLink>. You can also <IntroLink to='/contact'>contact me</IntroLink> or view <IntroLink to='#'>my resume</IntroLink>.</p>
+        <ButtonGroup>
+            <IconButtonLink to='#' label='Resume' icon='far fa-file-alt'/>
+            <IconButtonLink to='https://github.com/Lewis65' label='Github' icon='fab fa-github'/>
+            <IconButtonLink to='https://www.linkedin.com/in/lewishorwood/' label='Linkedin' icon='fab fa-linkedin'/>
+        </ButtonGroup>
     </Section>
 )
 

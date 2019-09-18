@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Section = styled.section`
     color: white;
-    padding: 1rem 0;
+    margin: 2rem 0;
     text-align: center;
     width: 100%;
     h2 {
@@ -12,6 +12,7 @@ const Section = styled.section`
         margin: 0 auto 2rem auto;
     }
     p {
+        line-height: 200%;
         margin: 2rem auto;
         padding: 0;
     }

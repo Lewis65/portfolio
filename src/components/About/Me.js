@@ -9,6 +9,7 @@ const Wrapper = styled.div`
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    font-size: 110%;
     height: 100%;
     justify-content: center;
     margin: auto;
@@ -17,6 +18,9 @@ const Wrapper = styled.div`
     z-index: 3;
     &>.about-section:last-child{
         border-bottom: 0;
+    }
+    @media screen and (min-width: 1024px){
+        font-size: 125%;
     }
 `
 
