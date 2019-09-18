@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Button from '../shared/Button'
+import sendEmail from '../../sendEmail'
 
 const Field = styled.div`
   background-color: white;
@@ -49,18 +50,27 @@ class ContactForm extends React.Component {
   }
 
   handleChange(e){
-    console.log(e.target)
     this.setState({[e.target.name]: e.target.value})
   }
   
   handleSubmit(e){
-    e.preventDefault()
-    const message = {
+    const body = {
       name: this.state.name,
       email: this.state.email,
-      body: this.state.body
+      message: this.state.body
     }
-    console.log(message)
+    sendEmail(e, body)
+    .then(res => {
+      return res.json()
+    })
+    .then(data => {
+      console.log(data)
+      if(data.body && data.body.success){
+        alert(`Thanks for your message, ${data.body.name}. I'll get back to you as soon as possible!`)
+      } else {
+        alert("Sorry, something went wrong. Please contact me via Github or Linkedin!")
+      }
+    })
   }
 
   render(){
@@ -71,7 +81,7 @@ class ContactForm extends React.Component {
       <Field><input type="text" name="email" value={this.state.email} onChange={this.handleChange}></input></Field>
       <label>Message</label>
       <Field><textarea rows="8" name="body" value={this.state.body} onChange={this.handleChange}></textarea></Field>
-      <Send>Send</Send>
+      <Send onClick={(e) => this.handleSubmit(e)}>Send</Send>
     </Form>
     
   }
