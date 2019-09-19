@@ -1,21 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Link } from 'gatsby'
-
-const IconLink = styled(Link)`
-    background-color: ${props => props.theme.colors.lightblue};
-    display: inline-flex;
-    text-decoration: none;
-    transition: background-color 0.15s ease-out;
-    &:hover {
-        background-color: ${props => props.theme.colors.pink};
-    }
-    div {
-        padding: 0.75rem;
-    }
-`
-
 const ExternalIconLink = styled.a`
     background-color: ${props => props.theme.colors.lightblue};
     display: inline-flex;
@@ -49,17 +34,6 @@ const Label = styled.div`
 `
 
 const IconButton = (props) => {
-    return <IconLink to={props.to}>
-        <Icon>
-            <i className={props.icon}/>
-        </Icon>
-        <Label>
-            {props.label}
-        </Label>
-    </IconLink>
-}
-
-const IconButtonExt = (props) => {
     return <ExternalIconLink href={props.href}>
         <Icon>
             <i className={props.icon}/>
@@ -70,4 +44,4 @@ const IconButtonExt = (props) => {
     </ExternalIconLink>
 }
 
-export { IconButton, IconButtonExt }
+export default IconButton
