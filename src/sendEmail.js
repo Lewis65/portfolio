@@ -1,7 +1,5 @@
-//POST contact form submissions to the URL provided in secrets.json
+//POST contact form submissions to the URL provided in .env
 //In my case, I'm using AWS (API Gateway -> Lambda -> SES)
-import { contactPostUrl } from '../secrets.json'
-
 function sendEmail (event, body) {
     event.preventDefault()
     const params = {
@@ -12,8 +10,7 @@ function sendEmail (event, body) {
         },
         body: JSON.stringify(body)
     }
-    console.log(contactPostUrl, params)
-    return fetch(contactPostUrl, params)
+    return fetch(process.env.GATSBY_CONTACT_POST_URL, params)
 }
 
 export default sendEmail

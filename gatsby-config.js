@@ -1,9 +1,11 @@
-const secrets = require('./secrets.json')
+require('dotenv').config({
+  path: '.env'
+})
 
 module.exports = {
   siteMetadata: {
-    title: 'Lewis Horwood',
-    description: 'I am a Javascript developer focused on making cool and useful things that make life better. The MERN stack (Mongo, Express, React, Node) is my weapon of choice.',
+    title: 'Lewis Horwood - Portfolio',
+    description: 'Full-stack Javascript developer based in Calgary, AB. Versed in React, Node.js, Express, MongoDB and more.',
     author: 'Lewis',
   },
   plugins: [
@@ -18,8 +20,8 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: secrets.contentfulSpaceId,
-        accessToken: secrets.contentfulAccessToken
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
       }
     },
     {
