@@ -38,8 +38,7 @@ const Projects = (props) => {
   const tagsOfAllProjects = Array.from(
     new Set(
       props.projects
-      .map(project => project.tags)
-      .flat()
+      .flatMap(project => project.tags)
     )
   ).sort()
 
